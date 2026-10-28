@@ -1,6 +1,5 @@
-version: "3.8"
-
 services:
+  # 1. Base de Datos MySQL
   db:
     image: mysql:8.0
     container_name: datahorse-db
@@ -9,17 +8,16 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_DATABASE: ${DB_NAME}
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      # Aquí cargaremos los datos iniciales (Paso 5)
       - ./init-db:/docker-entrypoint-initdb.d
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
       timeout: 5s
       retries: 5
-
+    # 2. Backend FastAPI
   backend:
     build: ./backend
     container_name: datahorse-backend
@@ -27,19 +25,14 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    environment:
-      - DB_HOST=db # 👈 ¡OJO! Aquí se conecta al contenedor de la BD, no a localhost
-      - DB_PORT=3306
-      - DB_USER=root
-      - DB_PASSWORD=${DB_ROOT_PASSWORD}
-      - DB_NAME=${DB_NAME}
-      - ENVIRONMENT=production
-      - ALLOWED_ORIGINS=http://localhost,http://localhost:80,http://localhost:4200
+    env_file:
+      - ./backend/.env
     ports:
       - "8000:8000"
     volumes:
       - ./backend/uploads:/app/uploads
 
+  # 3. Frontend Angular (Nginx)
   frontend:
     build: ./frontend
     container_name: datahorse-frontend
@@ -49,5 +42,6 @@ services:
     depends_on:
       - backend
 
+# Volumen para que los datos de MySQL no se borren al apagar Docker
 volumes:
   mysql_data:
