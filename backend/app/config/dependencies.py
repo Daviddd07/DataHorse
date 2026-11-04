@@ -10,6 +10,17 @@ from fastapi import Depends
 from sqlalchemy.orm import Session
 
 from app.application.services.codigo_verificacion_service import CodigoVerificacionService
+from app.application.use_cases.admin_use_cases import (
+    ListarUsuariosAdminUseCase,
+    ObtenerResumenAdminUseCase,
+    VerificarAdministradorUseCase,
+)
+from app.application.use_cases.compatibilidad_use_cases import (
+    ConsultarCupoCompatibilidadUseCase,
+    EvaluarCompatibilidadUseCase,
+    ListarResultadosCompatibilidadUseCase,
+    ObtenerResultadoCompatibilidadUseCase,
+)
 from app.application.use_cases.caballo_use_cases import (
     ActualizarCaballoUseCase,
     EliminarCaballoUseCase,
@@ -41,7 +52,25 @@ from app.application.use_cases.publicacion_use_cases import (
 from app.application.use_cases.registrar_caballo_use_case import RegistrarCaballoUseCase
 from app.application.use_cases.registrar_logs_use_case import RegistrarLogsUseCase
 from app.application.use_cases.registrar_use_case import RegistrarUseCase
-from app.config.settings import FOTO_CABALLO_DIR, FOTO_CABALLO_URL_PREFIX
+from app.config.settings import (
+    FOTO_CABALLO_DIR,
+    FOTO_CABALLO_URL_PREFIX,
+    GROQ_MODELOS,
+    GROQ_TIMEOUT_SEGUNDOS,
+    LIMITE_EVALUACIONES_DIARIAS,
+    ZONA_HORARIA_HORAS,
+)
+from app.domain.ports.in_.compatibilidad_ports import (
+    ConsultarCupoCompatibilidadPort,
+    EvaluarCompatibilidadPort,
+    ListarResultadosCompatibilidadPort,
+    ObtenerResultadoCompatibilidadPort,
+)
+from app.domain.ports.in_.admin_ports import (
+    ListarUsuariosAdminPort,
+    ObtenerResumenAdminPort,
+    VerificarAdministradorPort,
+)
 from app.domain.ports.in_.caballo_ports import (
     ActualizarCaballoPort,
     EliminarCaballoPort,
@@ -77,6 +106,13 @@ from app.infraestructure.adaptadores.outbound.argon2_password_hasher import Argo
 from app.infraestructure.adaptadores.outbound.correo.mailjet_enviador import MailjetEnviadorCodigo
 from app.infraestructure.adaptadores.outbound.geocoding.nominatim_geocoding import (
     NominatimGeocoding,
+)
+from app.infraestructure.adaptadores.outbound.ia.groq_evaluador import GroqEvaluadorCompatibilidad
+from app.infraestructure.adaptadores.outbound.persistence.compatibilidad_repository_mysql import (
+    CompatibilidadRepositoryMySQL,
+)
+from app.infraestructure.adaptadores.outbound.persistence.admin_consultas_mysql import (
+    AdminConsultasMySQL,
 )
 from app.infraestructure.adaptadores.outbound.persistence.audit_log_service import AuditoriaMySQL
 from app.infraestructure.adaptadores.outbound.persistence.caballo_repository_mysql import (
@@ -132,6 +168,11 @@ _ubicacion_consultas = UbicacionConsultasMySQL()
 _favorito_repo = FavoritoRepositoryMySQL()
 _log_repo = LogRepositoryMySQL()
 _auditoria = AuditoriaMySQL()
+_admin_consultas = AdminConsultasMySQL()
+_compatibilidad_repo = CompatibilidadRepositoryMySQL()
+_evaluador_compatibilidad = GroqEvaluadorCompatibilidad(
+    os.getenv("GROQ_API_KEY"), GROQ_MODELOS, GROQ_TIMEOUT_SEGUNDOS
+)
 _geocoding = NominatimGeocoding()
 _tokens = JwtTokenService()
 _almacenamiento = AlmacenamientoLocal(FOTO_CABALLO_DIR, FOTO_CABALLO_URL_PREFIX)
@@ -255,11 +296,57 @@ def get_quitar_favorito_use_case() -> QuitarFavoritoPort:
 
 
 # ======================================================
+# COMPATIBILIDAD (IA)
+# ======================================================
+
+def get_evaluar_compatibilidad_use_case() -> EvaluarCompatibilidadPort:
+    return EvaluarCompatibilidadUseCase(
+        _compatibilidad_repo,
+        _evaluador_compatibilidad,
+        LIMITE_EVALUACIONES_DIARIAS,
+        ZONA_HORARIA_HORAS,
+    )
+
+
+def get_cupo_compatibilidad_use_case() -> ConsultarCupoCompatibilidadPort:
+    return ConsultarCupoCompatibilidadUseCase(
+        _compatibilidad_repo,
+        LIMITE_EVALUACIONES_DIARIAS,
+        ZONA_HORARIA_HORAS,
+    )
+
+
+def get_listar_resultados_compatibilidad_use_case() -> ListarResultadosCompatibilidadPort:
+    return ListarResultadosCompatibilidadUseCase(_compatibilidad_repo)
+
+
+def get_obtener_resultado_compatibilidad_use_case() -> ObtenerResultadoCompatibilidadPort:
+    return ObtenerResultadoCompatibilidadUseCase(_compatibilidad_repo)
+
+
+# ======================================================
 # LOGS DEL FRONTEND
 # ======================================================
 
 def get_registrar_logs_use_case() -> RegistrarLogsPort:
     return RegistrarLogsUseCase(_log_repo)
+
+
+# ======================================================
+# ADMINISTRACIÓN
+# ======================================================
+
+def get_verificar_administrador_use_case() -> VerificarAdministradorPort:
+    return VerificarAdministradorUseCase(_usuario_repo)
+
+
+def get_resumen_admin_use_case() -> ObtenerResumenAdminPort:
+    # Dashboard de logs del botón del panel admin; sin GRAFANA_URL en el .env el botón se oculta.
+    return ObtenerResumenAdminUseCase(_admin_consultas, os.getenv("GRAFANA_URL", ""))
+
+
+def get_listar_usuarios_admin_use_case() -> ListarUsuariosAdminPort:
+    return ListarUsuariosAdminUseCase(_admin_consultas)
 
 
 # ======================================================

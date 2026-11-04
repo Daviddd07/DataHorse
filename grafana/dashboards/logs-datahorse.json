@@ -1,0 +1,301 @@
+{
+  "uid": "datahorse-logs",
+  "title": "Logs DataHorse",
+  "description": "Peticiones del backend (logs_tecnicos) y logs del navegador (log_frontend).",
+  "tags": ["datahorse", "logs"],
+  "timezone": "browser",
+  "editable": true,
+  "graphTooltip": 1,
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "time": { "from": "now-7d", "to": "now" },
+  "templating": { "list": [] },
+  "annotations": { "list": [] },
+  "panels": [
+    {
+      "type": "row",
+      "title": "Backend",
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 0 },
+      "panels": []
+    },
+    {
+      "type": "stat",
+      "title": "Peticiones",
+      "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+      "gridPos": { "h": 4, "w": 6, "x": 0, "y": 1 },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT COUNT(*) AS value FROM logs_tecnicos WHERE $__timeFilter(fecha_hora)"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": { "mode": "fixed", "fixedColor": "blue" },
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "blue", "value": null }] }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "colorMode": "value",
+        "graphMode": "none",
+        "textMode": "value"
+      }
+    },
+    {
+      "type": "stat",
+      "title": "Errores del servidor (5xx)",
+      "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+      "gridPos": { "h": 4, "w": 6, "x": 6, "y": 1 },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT COUNT(*) AS value FROM logs_tecnicos WHERE $__timeFilter(fecha_hora) AND estado_http >= 500"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": { "mode": "thresholds" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "red", "value": 1 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "colorMode": "value",
+        "graphMode": "none",
+        "textMode": "value"
+      }
+    },
+    {
+      "type": "stat",
+      "title": "Errores del cliente (4xx)",
+      "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+      "gridPos": { "h": 4, "w": 6, "x": 12, "y": 1 },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT COUNT(*) AS value FROM logs_tecnicos WHERE $__timeFilter(fecha_hora) AND estado_http BETWEEN 400 AND 499"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": { "mode": "thresholds" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "orange", "value": 1 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "colorMode": "value",
+        "graphMode": "none",
+        "textMode": "value"
+      }
+    },
+    {
+      "type": "stat",
+      "title": "Duración promedio",
+      "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+      "gridPos": { "h": 4, "w": 6, "x": 18, "y": 1 },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT ROUND(AVG(duracion_ms), 1) AS value FROM logs_tecnicos WHERE $__timeFilter(fecha_hora)"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms",
+          "decimals": 1,
+          "color": { "mode": "thresholds" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "orange", "value": 500 },
+              { "color": "red", "value": 1500 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "colorMode": "value",
+        "graphMode": "none",
+        "textMode": "value"
+      }
+    },
+    {
+      "type": "timeseries",
+      "title": "Peticiones por código HTTP",
+      "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+      "gridPos": { "h": 8, "w": 14, "x": 0, "y": 5 },
+      "interval": "15m",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+          "editorMode": "code",
+          "format": "time_series",
+          "rawQuery": true,
+          "rawSql": "SELECT $__timeGroupAlias(fecha_hora, $__interval, 0), CONCAT(FLOOR(estado_http / 100), 'xx') AS metric, COUNT(*) AS value FROM logs_tecnicos WHERE $__timeFilter(fecha_hora) AND estado_http IS NOT NULL GROUP BY 1, 2 ORDER BY 1"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "custom": { "drawStyle": "bars", "fillOpacity": 70, "stacking": { "mode": "normal" } }
+        },
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "2xx" }, "properties": [{ "id": "color", "value": { "mode": "fixed", "fixedColor": "green" } }] },
+          { "matcher": { "id": "byName", "options": "3xx" }, "properties": [{ "id": "color", "value": { "mode": "fixed", "fixedColor": "blue" } }] },
+          { "matcher": { "id": "byName", "options": "4xx" }, "properties": [{ "id": "color", "value": { "mode": "fixed", "fixedColor": "orange" } }] },
+          { "matcher": { "id": "byName", "options": "5xx" }, "properties": [{ "id": "color", "value": { "mode": "fixed", "fixedColor": "red" } }] }
+        ]
+      },
+      "options": {
+        "legend": { "displayMode": "list", "placement": "bottom", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      }
+    },
+    {
+      "type": "table",
+      "title": "Rutas más lentas",
+      "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+      "gridPos": { "h": 8, "w": 10, "x": 14, "y": 5 },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT metodo_http AS 'Método', ruta AS 'Ruta', COUNT(*) AS 'Peticiones', ROUND(AVG(duracion_ms), 1) AS 'Promedio (ms)', MAX(duracion_ms) AS 'Máximo (ms)' FROM logs_tecnicos WHERE $__timeFilter(fecha_hora) AND ruta IS NOT NULL GROUP BY metodo_http, ruta ORDER BY 4 DESC LIMIT 10"
+        }
+      ],
+      "fieldConfig": { "defaults": {}, "overrides": [] },
+      "options": { "showHeader": true, "cellHeight": "sm" }
+    },
+    {
+      "type": "table",
+      "title": "Últimos errores y advertencias del backend",
+      "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+      "gridPos": { "h": 9, "w": 24, "x": 0, "y": 13 },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT fecha_hora AS 'Fecha', nivel AS 'Nivel', estado_http AS 'HTTP', metodo_http AS 'Método', ruta AS 'Ruta', modulo AS 'Módulo', mensaje AS 'Mensaje', excepcion AS 'Excepción', request_id AS 'Request ID' FROM logs_tecnicos WHERE $__timeFilter(fecha_hora) AND (nivel IN ('WARNING', 'ERROR', 'CRITICAL') OR estado_http >= 400) ORDER BY fecha_hora DESC LIMIT 100"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "Fecha" }, "properties": [{ "id": "unit", "value": "dateTimeAsLocal" }] }
+        ]
+      },
+      "options": { "showHeader": true, "cellHeight": "sm" }
+    },
+    {
+      "type": "row",
+      "title": "Frontend (navegador)",
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 22 },
+      "panels": []
+    },
+    {
+      "type": "timeseries",
+      "title": "Logs del navegador por nivel",
+      "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+      "gridPos": { "h": 8, "w": 10, "x": 0, "y": 23 },
+      "interval": "15m",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+          "editorMode": "code",
+          "format": "time_series",
+          "rawQuery": true,
+          "rawSql": "SELECT $__timeGroupAlias(fecha, $__interval, 0), nivel AS metric, COUNT(*) AS value FROM log_frontend WHERE $__timeFilter(fecha) GROUP BY 1, 2 ORDER BY 1"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "custom": { "drawStyle": "bars", "fillOpacity": 70, "stacking": { "mode": "normal" } }
+        },
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "debug" }, "properties": [{ "id": "color", "value": { "mode": "fixed", "fixedColor": "purple" } }] },
+          { "matcher": { "id": "byName", "options": "info" }, "properties": [{ "id": "color", "value": { "mode": "fixed", "fixedColor": "blue" } }] },
+          { "matcher": { "id": "byName", "options": "warn" }, "properties": [{ "id": "color", "value": { "mode": "fixed", "fixedColor": "orange" } }] },
+          { "matcher": { "id": "byName", "options": "error" }, "properties": [{ "id": "color", "value": { "mode": "fixed", "fixedColor": "red" } }] }
+        ]
+      },
+      "options": {
+        "legend": { "displayMode": "list", "placement": "bottom", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      }
+    },
+    {
+      "type": "table",
+      "title": "Últimas advertencias y errores del navegador",
+      "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+      "gridPos": { "h": 8, "w": 14, "x": 10, "y": 23 },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "mysql", "uid": "datahorse-mysql" },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT fecha AS 'Fecha', nivel AS 'Nivel', mensaje AS 'Mensaje', url AS 'URL', id_usuario AS 'Usuario', sesion_id AS 'Sesión' FROM log_frontend WHERE $__timeFilter(fecha) AND nivel IN ('warn', 'error') ORDER BY fecha DESC LIMIT 100"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "Fecha" }, "properties": [{ "id": "unit", "value": "dateTimeAsLocal" }] }
+        ]
+      },
+      "options": { "showHeader": true, "cellHeight": "sm" }
+    }
+  ]
+}

@@ -42,6 +42,29 @@ services:
     depends_on:
       - backend
 
-# Volumen para que los datos de MySQL no se borren al apagar Docker
+  # 4. Grafana (logs). La conexión a MySQL y el dashboard se crean solos desde ./grafana.
+  #    Primer inicio: usuario admin / admin; Grafana pide cambiar la contraseña.
+  grafana:
+    image: grafana/grafana-oss:11.3.0
+    container_name: datahorse-grafana
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_NAME: ${DB_NAME}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_AUTH_ANONYMOUS_ENABLED: "false"
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /var/lib/grafana/dashboards/logs-datahorse.json
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+
+# Volúmenes para que los datos de MySQL y Grafana no se borren al apagar Docker
 volumes:
   mysql_data:
+  grafana_data:
