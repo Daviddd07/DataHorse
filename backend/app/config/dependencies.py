@@ -15,6 +15,12 @@ from app.application.use_cases.admin_use_cases import (
     ObtenerResumenAdminUseCase,
     VerificarAdministradorUseCase,
 )
+from app.application.use_cases.perfil_use_cases import (
+    ActualizarPerfilUseCase,
+    CambiarFotoPerfilUseCase,
+    ObtenerPerfilUseCase,
+    QuitarFotoPerfilUseCase,
+)
 from app.application.use_cases.compatibilidad_use_cases import (
     ConsultarCupoCompatibilidadUseCase,
     EvaluarCompatibilidadUseCase,
@@ -27,6 +33,16 @@ from app.application.use_cases.caballo_use_cases import (
     ListarMisCaballosUseCase,
     ListarUbicacionesUseCase,
     ObtenerCaballoUseCase,
+)
+from app.application.use_cases.conversacion_use_cases import (
+    AbrirConversacionUseCase,
+    ContarNoLeidosUseCase,
+    EnviarMensajeUseCase,
+    ListarConversacionesUseCase,
+    MarcarLeidosUseCase,
+    ObtenerConversacionUseCase,
+    VerificarParticipanteUseCase,
+    reloj_local,
 )
 from app.application.use_cases.cuenta_use_cases import (
     AutenticarConGoogleUseCase,
@@ -55,6 +71,9 @@ from app.application.use_cases.registrar_use_case import RegistrarUseCase
 from app.config.settings import (
     FOTO_CABALLO_DIR,
     FOTO_CABALLO_URL_PREFIX,
+    FOTO_PERFIL_DIR,
+    FOTO_PERFIL_LADO,
+    FOTO_PERFIL_URL_PREFIX,
     GROQ_MODELOS,
     GROQ_TIMEOUT_SEGUNDOS,
     LIMITE_EVALUACIONES_DIARIAS,
@@ -71,12 +90,30 @@ from app.domain.ports.in_.admin_ports import (
     ObtenerResumenAdminPort,
     VerificarAdministradorPort,
 )
+from app.domain.ports.in_.perfil_ports import (
+    ActualizarPerfilPort,
+    CambiarFotoPerfilPort,
+    ObtenerPerfilPort,
+    QuitarFotoPerfilPort,
+)
+from app.infraestructure.adaptadores.outbound.imagenes.pillow_procesador_imagen import (
+    PillowProcesadorImagen,
+)
 from app.domain.ports.in_.caballo_ports import (
     ActualizarCaballoPort,
     EliminarCaballoPort,
     ListarMisCaballosPort,
     ListarUbicacionesPort,
     ObtenerCaballoPort,
+)
+from app.domain.ports.in_.conversacion_ports import (
+    AbrirConversacionPort,
+    ContarNoLeidosPort,
+    EnviarMensajePort,
+    ListarConversacionesPort,
+    MarcarLeidosPort,
+    ObtenerConversacionPort,
+    VerificarParticipantePort,
 )
 from app.domain.ports.in_.cuenta_ports import (
     AutenticarConGooglePort,
@@ -121,6 +158,9 @@ from app.infraestructure.adaptadores.outbound.persistence.caballo_repository_mys
 )
 from app.infraestructure.adaptadores.outbound.persistence.codigo_verificacion_repository_mysql import (
     CodigoVerificacionRepositoryMySQL,
+)
+from app.infraestructure.adaptadores.outbound.persistence.conversacion_repository_mysql import (
+    ConversacionRepositoryMySQL,
 )
 from app.infraestructure.adaptadores.outbound.persistence.db_conexion import get_db
 from app.infraestructure.adaptadores.outbound.persistence.favorito_repository_mysql import (
@@ -170,12 +210,16 @@ _log_repo = LogRepositoryMySQL()
 _auditoria = AuditoriaMySQL()
 _admin_consultas = AdminConsultasMySQL()
 _compatibilidad_repo = CompatibilidadRepositoryMySQL()
+_conversacion_repo = ConversacionRepositoryMySQL()
+_reloj_local = reloj_local(ZONA_HORARIA_HORAS)
 _evaluador_compatibilidad = GroqEvaluadorCompatibilidad(
     os.getenv("GROQ_API_KEY"), GROQ_MODELOS, GROQ_TIMEOUT_SEGUNDOS
 )
 _geocoding = NominatimGeocoding()
 _tokens = JwtTokenService()
 _almacenamiento = AlmacenamientoLocal(FOTO_CABALLO_DIR, FOTO_CABALLO_URL_PREFIX)
+_almacenamiento_perfiles = AlmacenamientoLocal(FOTO_PERFIL_DIR, FOTO_PERFIL_URL_PREFIX)
+_procesador_imagen = PillowProcesadorImagen(FOTO_PERFIL_LADO)
 _verificador_google = VerificadorGoogle(os.getenv("GOOGLE_CLIENT_ID"))
 
 _codigos = CodigoVerificacionService(
@@ -241,6 +285,26 @@ def get_solicitar_recuperacion_use_case() -> SolicitarRecuperacionPort:
 
 def get_restablecer_contrasena_use_case() -> RestablecerContrasenaPort:
     return RestablecerContrasenaUseCase(_usuario_repo, _codigos, _hasher)
+
+
+# ======================================================
+# MI CUENTA (perfil)
+# ======================================================
+
+def get_obtener_perfil_use_case() -> ObtenerPerfilPort:
+    return ObtenerPerfilUseCase(_usuario_repo)
+
+
+def get_actualizar_perfil_use_case() -> ActualizarPerfilPort:
+    return ActualizarPerfilUseCase(_usuario_repo, _geocoding)
+
+
+def get_cambiar_foto_perfil_use_case() -> CambiarFotoPerfilPort:
+    return CambiarFotoPerfilUseCase(_usuario_repo, _almacenamiento_perfiles, _procesador_imagen)
+
+
+def get_quitar_foto_perfil_use_case() -> QuitarFotoPerfilPort:
+    return QuitarFotoPerfilUseCase(_usuario_repo, _almacenamiento_perfiles)
 
 
 def get_usuario_actual_use_case() -> ObtenerUsuarioActualPort:
@@ -322,6 +386,40 @@ def get_listar_resultados_compatibilidad_use_case() -> ListarResultadosCompatibi
 
 def get_obtener_resultado_compatibilidad_use_case() -> ObtenerResultadoCompatibilidadPort:
     return ObtenerResultadoCompatibilidadUseCase(_compatibilidad_repo)
+
+
+# ======================================================
+# CONVERSACIONES (chat entre propietarios)
+# ======================================================
+
+def get_abrir_conversacion_use_case() -> AbrirConversacionPort:
+    return AbrirConversacionUseCase(_conversacion_repo, _auditoria, _reloj_local)
+
+
+def get_listar_conversaciones_use_case() -> ListarConversacionesPort:
+    return ListarConversacionesUseCase(_conversacion_repo)
+
+
+def get_verificar_participante_use_case() -> VerificarParticipantePort:
+    return VerificarParticipanteUseCase(_conversacion_repo)
+
+
+def get_obtener_conversacion_use_case() -> ObtenerConversacionPort:
+    return ObtenerConversacionUseCase(_conversacion_repo, get_verificar_participante_use_case())
+
+
+def get_contar_no_leidos_use_case() -> ContarNoLeidosPort:
+    return ContarNoLeidosUseCase(_conversacion_repo)
+
+
+def get_marcar_leidos_use_case() -> MarcarLeidosPort:
+    return MarcarLeidosUseCase(_conversacion_repo, get_verificar_participante_use_case())
+
+
+def get_enviar_mensaje_use_case() -> EnviarMensajePort:
+    return EnviarMensajeUseCase(
+        _conversacion_repo, get_verificar_participante_use_case(), _reloj_local
+    )
 
 
 # ======================================================
