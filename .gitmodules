@@ -1,0 +1,8 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/Daviddd07/DataHorse_Backend.git
+	branch = dev
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/Daviddd07/DataHorse_Frontend.git
+	branch = dev

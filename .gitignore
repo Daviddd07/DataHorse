@@ -1,2 +1,27 @@
+# Repo "todo": une backend y frontend (submódulos) con init-db, grafana y docker-compose.
+# Cada submódulo tiene su propio .gitignore.
+
 # Variables de entorno (contienen contraseñas)
 .env
+.env.*
+!.env.example
+
+# Editor
+.vscode/
+.idea/
+
+# SonarQube
+.scannerwork/
+
+# Python suelto en la raíz (scripts de apoyo)
+__pycache__/
+*.pyc
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Copias de seguridad y volcados locales de la base
+backups/
+*.bak
+*.dump
