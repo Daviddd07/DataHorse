@@ -1,0 +1,29 @@
+# Override para las pruebas de carga y estrés (JMeter).
+# Se suma a docker-compose.yml sin modificarlo:
+#   docker compose -p datahorse-pruebas -f docker-compose.yml -f docker-compose.pruebas.yml up -d --build
+# Con -p datahorse-pruebas Docker usa volúmenes propios: la BD de pruebas queda separada de la normal.
+# Los puertos son los mismos que el entorno normal, así que no pueden estar encendidos a la vez.
+
+services:
+  db:
+    container_name: datahorse-pruebas-db
+
+  backend:
+    container_name: datahorse-pruebas-backend
+    environment:
+      # Sin Mailjet: el registro crea la cuenta igual (correo_enviado=false) y no envía correos reales.
+      MAILJET_API_KEY: ""
+      MAILJET_SECRET_KEY: ""
+      # Sin Groq: evita gastar cuota de la IA durante las pruebas.
+      GROQ_API_KEY: ""
+    extra_hosts:
+      # Bloquea Nominatim (geocodificación pública, máx. 1 petición/s): cada POST /caballos lo llamaría
+      # y nos bloquearían la IP. El código ya tolera el fallo y guarda la ubicación solo como texto.
+      - "nominatim.openstreetmap.org=127.0.0.1"
+      - "nominatim.openstreetmap.org=::1"
+
+  frontend:
+    container_name: datahorse-pruebas-frontend
+
+  grafana:
+    container_name: datahorse-pruebas-grafana

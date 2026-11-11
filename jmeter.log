@@ -1,0 +1,20 @@
+2026-11-10 20:29:28,838 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2026-11-10 20:29:28,865 INFO o.a.j.JMeter: Loading user properties from: C:\Users\HPPersonal\Downloads\apache-jmeter-5.6.3\apache-jmeter-5.6.3\bin\user.properties
+2026-11-10 20:29:28,866 INFO o.a.j.JMeter: Loading system properties from: C:\Users\HPPersonal\Downloads\apache-jmeter-5.6.3\apache-jmeter-5.6.3\bin\system.properties
+2026-11-10 20:29:28,877 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-11-10 20:29:28,877 INFO o.a.j.JMeter: Version 5.6.3
+2026-11-10 20:29:28,877 INFO o.a.j.JMeter: java.version=25.0.2
+2026-11-10 20:29:28,878 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2026-11-10 20:29:28,878 INFO o.a.j.JMeter: os.name=Windows 11
+2026-11-10 20:29:28,878 INFO o.a.j.JMeter: os.arch=amd64
+2026-11-10 20:29:28,878 INFO o.a.j.JMeter: os.version=10.0
+2026-11-10 20:29:28,879 INFO o.a.j.JMeter: file.encoding=UTF-8
+2026-11-10 20:29:28,879 INFO o.a.j.JMeter: java.awt.headless=null
+2026-11-10 20:29:28,879 INFO o.a.j.JMeter: Max memory     =1073741824
+2026-11-10 20:29:28,879 INFO o.a.j.JMeter: Available Processors =8
+2026-11-10 20:29:28,904 INFO o.a.j.JMeter: Default Locale=English (EN)
+2026-11-10 20:29:28,905 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2026-11-10 20:29:28,906 INFO o.a.j.JMeter: JMeterHome=C:\Users\HPPersonal\Downloads\apache-jmeter-5.6.3\apache-jmeter-5.6.3
+2026-11-10 20:29:28,906 INFO o.a.j.JMeter: user.dir  =C:\Users\HPPersonal\OneDrive\Documentos\UDEC\DataHorse\Proyecto
+2026-11-10 20:29:28,907 INFO o.a.j.JMeter: PWD       =C:\Users\HPPersonal\OneDrive\Documentos\UDEC\DataHorse\Proyecto
+2026-11-10 20:29:28,921 INFO o.a.j.JMeter: IP: 192.168.1.47 Name: David FullName: David

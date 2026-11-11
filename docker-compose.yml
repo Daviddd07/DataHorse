@@ -31,6 +31,8 @@ services:
       - "8000:8000"
     volumes:
       - ./backend/uploads:/app/uploads
+      # Documentos de respaldo (privados: la API los entrega solo con sesión)
+      - ./backend/documentos:/app/documentos
 
   # 3. Frontend Angular (Nginx)
   frontend:

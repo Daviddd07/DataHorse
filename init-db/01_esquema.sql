@@ -10,6 +10,23 @@ SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 /*!50503 SET character_set_client = utf8mb4 */;
+-- Auditoría de acciones (login, fotos, documentos...). La escribe audit_log_service.py.
+CREATE TABLE `audit_logs` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `usuario_id` int DEFAULT NULL,
+  `accion` varchar(100) NOT NULL,
+  `modulo` varchar(100) NOT NULL,
+  `resultado` varchar(20) NOT NULL,
+  `detalle` text,
+  `request_id` varchar(100) DEFAULT NULL,
+  `fecha_hora` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_audit_usuario` (`usuario_id`),
+  KEY `idx_audit_fecha` (`fecha_hora`),
+  KEY `idx_audit_modulo_accion` (`modulo`, `accion`),
+  CONSTRAINT `fk_audit_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id_usuario`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `caballo` (
   `id_caballo` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(120) NOT NULL,
@@ -92,6 +109,25 @@ CREATE TABLE `descendencia` (
   PRIMARY KEY (`id_descendencia`),
   UNIQUE KEY `uq_descendencia_caballo` (`caballo_id_caballo`),
   CONSTRAINT `fk_descendencia_caballo` FOREIGN KEY (`caballo_id_caballo`) REFERENCES `caballo` (`id_caballo`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!50503 SET character_set_client = utf8mb4 */;
+-- Documentos de respaldo de un caballo macho (pedigrí, premios, pruebas genéticas).
+-- Los archivos van en backend/documentos/ (privado, nunca bajo /uploads).
+-- estado_verificacion queda listo para una futura revisión del administrador.
+CREATE TABLE `documento_caballo` (
+  `id_documento` int NOT NULL AUTO_INCREMENT,
+  `caballo_id_caballo` int NOT NULL,
+  `tipo` varchar(30) NOT NULL,
+  `titulo` varchar(120) NOT NULL,
+  `ruta` varchar(255) NOT NULL,
+  `nombre_original` varchar(255) NOT NULL,
+  `content_type` varchar(60) NOT NULL,
+  `tamano_bytes` int unsigned NOT NULL,
+  `estado_verificacion` varchar(20) NOT NULL DEFAULT 'sin_revisar',
+  `fecha_subida` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_documento`),
+  KEY `fk_documento_caballo` (`caballo_id_caballo`),
+  CONSTRAINT `fk_documento_caballo` FOREIGN KEY (`caballo_id_caballo`) REFERENCES `caballo` (`id_caballo`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `favorito` (
