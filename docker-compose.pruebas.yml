@@ -16,6 +16,9 @@ services:
       MAILJET_SECRET_KEY: ""
       # Sin Groq: evita gastar cuota de la IA durante las pruebas.
       GROQ_API_KEY: ""
+      # Sin límite de login por IP: JMeter lanza todos los usuarios virtuales desde la misma IP
+      # y el límite (pensado para producción) los bloquearía con 429.
+      LOGIN_LIMITE_POR_IP: "0"
     extra_hosts:
       # Bloquea Nominatim (geocodificación pública, máx. 1 petición/s): cada POST /caballos lo llamaría
       # y nos bloquearían la IP. El código ya tolera el fallo y guarda la ubicación solo como texto.

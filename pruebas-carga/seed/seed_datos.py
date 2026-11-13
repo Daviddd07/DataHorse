@@ -19,7 +19,10 @@ from datetime import date
 
 import pymysql
 import requests
-from argon2 import PasswordHasher
+
+# Mismo hasher que usa el backend (corre dentro del contenedor, en /app), para que los
+# usuarios sembrados tengan los mismos parámetros de Argon2 que los registrados por la API.
+from app.infraestructure.adaptadores.outbound.argon2_password_hasher import Argon2PasswordHasher
 
 # --- Parámetros (se pueden cambiar con variables de entorno) ---
 TOTAL_USUARIOS = int(os.getenv("SEED_USUARIOS", "300"))
@@ -57,7 +60,7 @@ def conectar():
 
 
 def sembrar_usuarios(cur) -> int:
-    hash_pw = PasswordHasher().hash(PASSWORD)  # un solo hash: todos comparten contraseña
+    hash_pw = Argon2PasswordHasher().hashear(PASSWORD)  # un solo hash: todos comparten contraseña
     hoy = date.today()
     filas = [
         (f"Usuario Carga {i:03d}", correo(i), hash_pw, "3000000000", CIUDADES[i % len(CIUDADES)],
