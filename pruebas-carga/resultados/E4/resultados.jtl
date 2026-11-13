@@ -1,0 +1,501 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1794427315391,196,POST /auth/login,200,OK,Usuarios concurrentes 1-1,text,true,,396,238,1,1,http://localhost:8000/auth/login,196,0,24
+1794427315596,46,GET /publicaciones ,200,OK,Usuarios concurrentes 1-1,text,true,,89442,322,1,1,http://localhost:8000/publicaciones,46,0,0
+1794427315644,55,POST /caballos (registro),201,Created,Usuarios concurrentes 1-1,text,true,,357,556,1,1,http://localhost:8000/api/v1/caballos,54,0,0
+1794427315733,50,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-1,text,true,,241,554,1,1,http://localhost:8000/api/v1/caballos/208%20,49,0,0
+1794427315784,33,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-1,text,true,,551,331,2,2,http://localhost:8000/api/v1/caballos/208%20,33,0,0
+1794427315798,217,POST /auth/login,200,OK,Usuarios concurrentes 1-2,text,true,,396,238,2,2,http://localhost:8000/auth/login,217,0,1
+1794427315819,198,POST /auth/login,200,OK,Usuarios concurrentes 1-1,text,true,,396,238,2,2,http://localhost:8000/auth/login,198,0,0
+1794427316018,92,GET /publicaciones ,200,OK,Usuarios concurrentes 1-1,text,true,,90017,322,2,2,http://localhost:8000/publicaciones,92,0,0
+1794427316016,97,GET /publicaciones ,200,OK,Usuarios concurrentes 1-2,text,true,,90017,322,2,2,http://localhost:8000/publicaciones,97,0,0
+1794427316111,80,POST /caballos (registro),201,Created,Usuarios concurrentes 1-1,text,true,,357,556,2,2,http://localhost:8000/api/v1/caballos,80,0,0
+1794427316114,80,POST /caballos (registro),201,Created,Usuarios concurrentes 1-2,text,true,,357,556,2,2,http://localhost:8000/api/v1/caballos,80,0,0
+1794427316195,50,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-2,text,true,,241,554,2,2,http://localhost:8000/api/v1/caballos/210%20,50,0,0
+1794427316193,54,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-1,text,true,,241,554,2,2,http://localhost:8000/api/v1/caballos/209%20,54,0,0
+1794427316246,29,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-2,text,true,,551,331,2,2,http://localhost:8000/api/v1/caballos/210%20,29,0,0
+1794427316248,35,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-1,text,true,,551,331,2,2,http://localhost:8000/api/v1/caballos/209%20,35,0,0
+1794427316277,235,POST /auth/login,200,OK,Usuarios concurrentes 1-2,text,true,,396,238,3,3,http://localhost:8000/auth/login,235,0,0
+1794427316297,241,POST /auth/login,200,OK,Usuarios concurrentes 1-3,text,true,,396,238,3,3,http://localhost:8000/auth/login,241,0,1
+1794427316285,269,POST /auth/login,200,OK,Usuarios concurrentes 1-1,text,true,,396,238,3,3,http://localhost:8000/auth/login,269,0,0
+1794427316513,87,GET /publicaciones ,200,OK,Usuarios concurrentes 1-2,text,true,,91155,322,3,3,http://localhost:8000/publicaciones,86,0,0
+1794427316555,77,GET /publicaciones ,200,OK,Usuarios concurrentes 1-1,text,true,,91155,322,3,3,http://localhost:8000/publicaciones,77,0,0
+1794427316539,95,GET /publicaciones ,200,OK,Usuarios concurrentes 1-3,text,true,,91155,322,3,3,http://localhost:8000/publicaciones,95,0,0
+1794427316601,81,POST /caballos (registro),201,Created,Usuarios concurrentes 1-2,text,true,,357,556,3,3,http://localhost:8000/api/v1/caballos,81,0,0
+1794427316632,59,POST /caballos (registro),201,Created,Usuarios concurrentes 1-1,text,true,,357,556,3,3,http://localhost:8000/api/v1/caballos,59,0,0
+1794427316635,70,POST /caballos (registro),201,Created,Usuarios concurrentes 1-3,text,true,,357,556,3,3,http://localhost:8000/api/v1/caballos,70,0,0
+1794427316683,64,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-2,text,true,,241,554,3,3,http://localhost:8000/api/v1/caballos/211%20,64,0,0
+1794427316693,54,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-1,text,true,,241,554,3,3,http://localhost:8000/api/v1/caballos/212%20,54,0,0
+1794427316706,63,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-3,text,true,,241,554,3,3,http://localhost:8000/api/v1/caballos/213%20,62,0,0
+1794427316748,35,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-2,text,true,,551,331,3,3,http://localhost:8000/api/v1/caballos/211%20,35,0,0
+1794427316748,35,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-1,text,true,,551,331,3,3,http://localhost:8000/api/v1/caballos/212%20,35,0,0
+1794427316769,29,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-3,text,true,,551,331,4,4,http://localhost:8000/api/v1/caballos/213%20,29,0,0
+1794427316784,350,POST /auth/login,200,OK,Usuarios concurrentes 1-2,text,true,,396,238,4,4,http://localhost:8000/auth/login,350,0,0
+1794427316784,389,POST /auth/login,200,OK,Usuarios concurrentes 1-1,text,true,,396,238,4,4,http://localhost:8000/auth/login,389,0,0
+1794427316793,422,POST /auth/login,200,OK,Usuarios concurrentes 1-4,text,true,,397,238,4,4,http://localhost:8000/auth/login,422,0,3
+1794427317135,81,GET /publicaciones ,200,OK,Usuarios concurrentes 1-2,text,true,,92862,322,4,4,http://localhost:8000/publicaciones,81,0,0
+1794427316800,416,POST /auth/login,200,OK,Usuarios concurrentes 1-3,text,true,,397,238,4,4,http://localhost:8000/auth/login,416,0,0
+1794427317174,97,GET /publicaciones ,200,OK,Usuarios concurrentes 1-1,text,true,,92862,322,4,4,http://localhost:8000/publicaciones,97,0,0
+1794427317216,105,GET /publicaciones ,200,OK,Usuarios concurrentes 1-4,text,true,,92862,323,5,5,http://localhost:8000/publicaciones,105,0,0
+1794427317217,119,GET /publicaciones ,200,OK,Usuarios concurrentes 1-3,text,true,,92862,323,5,5,http://localhost:8000/publicaciones,118,0,0
+1794427317217,158,POST /caballos (registro),201,Created,Usuarios concurrentes 1-2,text,true,,357,556,5,5,http://localhost:8000/api/v1/caballos,158,0,0
+1794427317272,121,POST /caballos (registro),201,Created,Usuarios concurrentes 1-1,text,true,,357,556,5,5,http://localhost:8000/api/v1/caballos,121,0,0
+1794427317377,62,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-2,text,true,,241,554,5,5,http://localhost:8000/api/v1/caballos/214%20,62,0,0
+1794427317337,102,POST /caballos (registro),201,Created,Usuarios concurrentes 1-3,text,true,,358,557,5,5,http://localhost:8000/api/v1/caballos,102,0,0
+1794427317322,117,POST /caballos (registro),201,Created,Usuarios concurrentes 1-4,text,true,,358,557,5,5,http://localhost:8000/api/v1/caballos,117,0,0
+1794427317394,63,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-1,text,true,,241,554,5,5,http://localhost:8000/api/v1/caballos/215%20,63,0,0
+1794427317294,169,POST /auth/login,200,OK,Usuarios concurrentes 1-5,text,true,,397,238,5,5,http://localhost:8000/auth/login,168,0,2
+1794427317440,60,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-2,text,true,,551,331,5,5,http://localhost:8000/api/v1/caballos/214%20,60,0,0
+1794427317458,44,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-1,text,true,,551,331,5,5,http://localhost:8000/api/v1/caballos/215%20,44,0,0
+1794427317440,93,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-3,text,true,,241,555,5,5,http://localhost:8000/api/v1/caballos/217%20,93,0,0
+1794427317440,114,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-4,text,true,,241,555,5,5,http://localhost:8000/api/v1/caballos/216%20,114,0,0
+1794427317464,108,GET /publicaciones ,200,OK,Usuarios concurrentes 1-5,text,true,,95122,323,5,5,http://localhost:8000/publicaciones,100,0,0
+1794427317534,105,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-3,text,true,,551,332,5,5,http://localhost:8000/api/v1/caballos/217%20,105,0,0
+1794427317556,96,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-4,text,true,,551,332,5,5,http://localhost:8000/api/v1/caballos/216%20,95,0,0
+1794427317573,150,POST /caballos (registro),201,Created,Usuarios concurrentes 1-5,text,true,,358,557,5,5,http://localhost:8000/api/v1/caballos,150,0,0
+1794427317724,135,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-5,text,true,,241,555,6,6,http://localhost:8000/api/v1/caballos/218%20,135,0,0
+1794427317501,358,POST /auth/login,200,OK,Usuarios concurrentes 1-2,text,true,,397,238,6,6,http://localhost:8000/auth/login,358,0,0
+1794427317503,417,POST /auth/login,200,OK,Usuarios concurrentes 1-1,text,true,,397,238,6,6,http://localhost:8000/auth/login,417,0,0
+1794427317860,200,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-5,text,true,,551,332,6,6,http://localhost:8000/api/v1/caballos/218%20,200,0,0
+1794427317922,208,GET /publicaciones ,200,OK,Usuarios concurrentes 1-1,text,true,,95710,323,6,6,http://localhost:8000/publicaciones,206,0,0
+1794427317860,280,GET /publicaciones ,200,OK,Usuarios concurrentes 1-2,text,true,,95710,323,6,6,http://localhost:8000/publicaciones,278,0,0
+1794427317653,513,POST /auth/login,200,OK,Usuarios concurrentes 1-4,text,true,,397,238,6,6,http://localhost:8000/auth/login,513,0,0
+1794427317791,428,POST /auth/login,200,OK,Usuarios concurrentes 1-6,text,true,,397,238,6,6,http://localhost:8000/auth/login,427,0,2
+1794427317641,578,POST /auth/login,200,OK,Usuarios concurrentes 1-3,text,true,,397,238,6,6,http://localhost:8000/auth/login,578,0,0
+1794427318168,301,GET /publicaciones ,200,OK,Usuarios concurrentes 1-4,text,true,,95710,323,7,7,http://localhost:8000/publicaciones,293,0,0
+1794427318131,370,POST /caballos (registro),201,Created,Usuarios concurrentes 1-1,text,true,,358,557,7,7,http://localhost:8000/api/v1/caballos,370,0,0
+1794427318141,374,POST /caballos (registro),201,Created,Usuarios concurrentes 1-2,text,true,,358,557,7,7,http://localhost:8000/api/v1/caballos,374,0,0
+1794427318220,298,GET /publicaciones ,200,OK,Usuarios concurrentes 1-3,text,true,,95710,323,7,7,http://localhost:8000/publicaciones,295,0,0
+1794427318220,314,GET /publicaciones ,200,OK,Usuarios concurrentes 1-6,text,true,,96271,323,7,7,http://localhost:8000/publicaciones,312,0,0
+1794427318516,165,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-2,text,true,,241,555,7,7,http://localhost:8000/api/v1/caballos/220%20,165,0,0
+1794427318502,196,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-1,text,true,,241,555,7,7,http://localhost:8000/api/v1/caballos/219%20,196,0,0
+1794427318062,645,POST /auth/login,200,OK,Usuarios concurrentes 1-5,text,true,,397,238,7,7,http://localhost:8000/auth/login,645,0,0
+1794427318519,194,POST /caballos (registro),201,Created,Usuarios concurrentes 1-3,text,true,,358,557,7,7,http://localhost:8000/api/v1/caballos,194,0,0
+1794427318470,243,POST /caballos (registro),201,Created,Usuarios concurrentes 1-4,text,true,,358,557,7,7,http://localhost:8000/api/v1/caballos,243,0,0
+1794427318682,83,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-2,text,true,,551,332,7,7,http://localhost:8000/api/v1/caballos/220%20,83,0,0
+1794427318535,230,POST /caballos (registro),201,Created,Usuarios concurrentes 1-6,text,true,,358,557,7,7,http://localhost:8000/api/v1/caballos,230,0,0
+1794427318699,87,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-1,text,true,,551,332,7,7,http://localhost:8000/api/v1/caballos/219%20,87,0,0
+1794427318294,503,POST /auth/login,200,OK,Usuarios concurrentes 1-7,text,true,,397,238,7,7,http://localhost:8000/auth/login,503,0,2
+1794427318714,185,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-4,text,true,,241,555,7,7,http://localhost:8000/api/v1/caballos/221%20,185,0,0
+1794427318714,185,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-3,text,true,,241,555,7,7,http://localhost:8000/api/v1/caballos/222%20,185,0,0
+1794427318709,198,GET /publicaciones ,200,OK,Usuarios concurrentes 1-5,text,true,,98533,323,7,7,http://localhost:8000/publicaciones,197,0,0
+1794427318766,367,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-6,text,true,,241,555,7,7,http://localhost:8000/api/v1/caballos/223%20,367,0,0
+1794427318900,250,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-3,text,true,,551,332,7,7,http://localhost:8000/api/v1/caballos/222%20,250,0,0
+1794427318900,250,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-4,text,true,,551,332,7,7,http://localhost:8000/api/v1/caballos/221%20,250,0,0
+1794427318799,354,GET /publicaciones ,200,OK,Usuarios concurrentes 1-7,text,true,,98551,323,7,7,http://localhost:8000/publicaciones,352,0,0
+1794427318908,390,POST /caballos (registro),201,Created,Usuarios concurrentes 1-5,text,true,,358,557,8,8,http://localhost:8000/api/v1/caballos,389,0,0
+1794427318766,1001,POST /auth/login,200,OK,Usuarios concurrentes 1-2,text,true,,397,238,8,8,http://localhost:8000/auth/login,1001,0,0
+1794427319134,651,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-6,text,true,,551,332,8,8,http://localhost:8000/api/v1/caballos/223%20,651,0,0
+1794427318794,1010,POST /auth/login,200,OK,Usuarios concurrentes 1-8,text,true,,397,238,9,9,http://localhost:8000/auth/login,1010,0,5
+1794427319299,580,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-5,text,true,,241,555,9,9,http://localhost:8000/api/v1/caballos/224%20,580,0,0
+1794427319154,728,POST /caballos (registro),201,Created,Usuarios concurrentes 1-7,text,true,,358,557,9,9,http://localhost:8000/api/v1/caballos,728,0,0
+1794427319152,884,POST /auth/login,200,OK,Usuarios concurrentes 1-4,text,true,,397,238,9,9,http://localhost:8000/auth/login,884,0,0
+1794427319152,884,POST /auth/login,200,OK,Usuarios concurrentes 1-3,text,true,,397,238,9,9,http://localhost:8000/auth/login,884,0,0
+1794427319289,747,POST /auth/login,200,OK,Usuarios concurrentes 1-9,text,true,,397,238,9,9,http://localhost:8000/auth/login,747,0,5
+1794427319768,269,GET /publicaciones ,200,OK,Usuarios concurrentes 1-2,text,true,,99691,323,9,9,http://localhost:8000/publicaciones,268,0,0
+1794427319880,234,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-5,text,true,,551,332,9,9,http://localhost:8000/api/v1/caballos/224%20,234,0,0
+1794427319806,495,GET /publicaciones ,200,OK,Usuarios concurrentes 1-8,text,true,,99691,323,10,10,http://localhost:8000/publicaciones,493,0,0
+1794427320037,517,GET /publicaciones ,200,OK,Usuarios concurrentes 1-3,text,true,,99691,323,10,10,http://localhost:8000/publicaciones,516,0,0
+1794427320037,520,GET /publicaciones ,200,OK,Usuarios concurrentes 1-9,text,true,,99691,323,10,10,http://localhost:8000/publicaciones,517,0,0
+1794427319796,904,POST /auth/login,200,OK,Usuarios concurrentes 1-10,text,true,,397,238,10,10,http://localhost:8000/auth/login,904,0,1
+1794427320046,654,GET /publicaciones ,200,OK,Usuarios concurrentes 1-4,text,true,,99691,323,10,10,http://localhost:8000/publicaciones,654,0,0
+1794427319786,915,POST /auth/login,200,OK,Usuarios concurrentes 1-6,text,true,,397,238,10,10,http://localhost:8000/auth/login,915,0,0
+1794427319883,837,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-7,text,true,,241,555,10,10,http://localhost:8000/api/v1/caballos/225%20,837,0,0
+1794427320037,809,POST /caballos (registro),201,Created,Usuarios concurrentes 1-2,text,true,,358,557,11,11,http://localhost:8000/api/v1/caballos,809,0,0
+1794427320722,529,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-7,text,true,,551,332,11,11,http://localhost:8000/api/v1/caballos/225%20,529,0,0
+1794427320702,551,GET /publicaciones ,200,OK,Usuarios concurrentes 1-10,text,true,,100823,323,11,11,http://localhost:8000/publicaciones,550,0,0
+1794427320556,697,POST /caballos (registro),201,Created,Usuarios concurrentes 1-3,text,true,,358,557,11,11,http://localhost:8000/api/v1/caballos,697,0,0
+1794427320302,950,POST /caballos (registro),201,Created,Usuarios concurrentes 1-8,text,true,,358,557,11,11,http://localhost:8000/api/v1/caballos,950,0,0
+1794427320703,562,GET /publicaciones ,200,OK,Usuarios concurrentes 1-6,text,true,,100262,323,11,11,http://localhost:8000/publicaciones,551,0,0
+1794427320559,705,POST /caballos (registro),201,Created,Usuarios concurrentes 1-9,text,true,,358,557,11,11,http://localhost:8000/api/v1/caballos,705,0,0
+1794427320849,455,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-2,text,true,,241,555,12,12,http://localhost:8000/api/v1/caballos/226%20,455,0,0
+1794427320287,1027,POST /auth/login,200,OK,Usuarios concurrentes 1-11,text,true,,397,238,12,12,http://localhost:8000/auth/login,1027,0,11
+1794427320115,1224,POST /auth/login,200,OK,Usuarios concurrentes 1-5,text,true,,397,238,12,12,http://localhost:8000/auth/login,1224,0,0
+1794427320702,660,POST /caballos (registro),201,Created,Usuarios concurrentes 1-4,text,true,,358,557,12,12,http://localhost:8000/api/v1/caballos,660,0,0
+1794427321305,453,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-2,text,true,,551,332,12,12,http://localhost:8000/api/v1/caballos/226%20,453,0,0
+1794427320820,939,POST /auth/login,200,OK,Usuarios concurrentes 1-12,text,true,,397,238,12,12,http://localhost:8000/auth/login,938,0,34
+1794427321254,614,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-3,text,true,,241,555,12,12,http://localhost:8000/api/v1/caballos/229%20,614,0,0
+1794427321266,602,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-9,text,true,,241,555,12,12,http://localhost:8000/api/v1/caballos/228%20,602,0,0
+1794427321266,602,POST /caballos (registro),201,Created,Usuarios concurrentes 1-6,text,true,,358,557,12,12,http://localhost:8000/api/v1/caballos,602,0,0
+1794427321254,616,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-8,text,true,,241,555,12,12,http://localhost:8000/api/v1/caballos/227%20,616,0,0
+1794427321253,629,POST /auth/login,200,OK,Usuarios concurrentes 1-7,text,true,,397,238,12,12,http://localhost:8000/auth/login,629,0,0
+1794427321316,754,GET /publicaciones ,200,OK,Usuarios concurrentes 1-11,text,true,,102515,323,12,12,http://localhost:8000/publicaciones,754,0,0
+1794427321298,772,POST /auth/login,200,OK,Usuarios concurrentes 1-13,text,true,,397,238,12,12,http://localhost:8000/auth/login,772,0,3
+1794427321341,779,GET /publicaciones ,200,OK,Usuarios concurrentes 1-5,text,true,,102524,323,12,12,http://localhost:8000/publicaciones,778,0,0
+1794427321254,866,POST /caballos (registro),201,Created,Usuarios concurrentes 1-10,text,true,,359,558,12,12,http://localhost:8000/api/v1/caballos,866,0,0
+1794427321363,760,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-4,text,true,,241,555,12,12,http://localhost:8000/api/v1/caballos/230%20,760,0,0
+1794427321761,643,GET /publicaciones ,200,OK,Usuarios concurrentes 1-12,text,true,,103675,323,13,13,http://localhost:8000/publicaciones,639,0,0
+1794427321869,540,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-9,text,true,,551,332,13,13,http://localhost:8000/api/v1/caballos/228%20,540,0,0
+1794427322125,360,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-4,text,true,,551,332,13,13,http://localhost:8000/api/v1/caballos/230%20,359,0,0
+1794427321869,622,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-3,text,true,,551,332,13,13,http://localhost:8000/api/v1/caballos/229%20,622,0,0
+1794427321883,608,GET /publicaciones ,200,OK,Usuarios concurrentes 1-7,text,true,,103675,323,13,13,http://localhost:8000/publicaciones,603,0,0
+1794427322071,425,GET /publicaciones ,200,OK,Usuarios concurrentes 1-13,text,true,,103675,323,13,13,http://localhost:8000/publicaciones,425,0,0
+1794427321871,687,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-8,text,true,,551,332,13,13,http://localhost:8000/api/v1/caballos/227%20,687,0,0
+1794427322121,545,POST /caballos (registro),201,Created,Usuarios concurrentes 1-5,text,true,,358,557,13,13,http://localhost:8000/api/v1/caballos,545,0,0
+1794427322122,554,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-10,text,true,,241,556,13,13,http://localhost:8000/api/v1/caballos/231%20,554,0,0
+1794427321870,835,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-6,text,true,,241,555,13,13,http://localhost:8000/api/v1/caballos/232%20,835,0,0
+1794427321788,917,POST /auth/login,200,OK,Usuarios concurrentes 1-14,text,true,,397,238,13,13,http://localhost:8000/auth/login,917,0,2
+1794427322406,312,POST /caballos (registro),201,Created,Usuarios concurrentes 1-12,text,true,,359,558,13,13,http://localhost:8000/api/v1/caballos,312,0,0
+1794427322071,648,POST /caballos (registro),201,Created,Usuarios concurrentes 1-11,text,true,,359,558,13,13,http://localhost:8000/api/v1/caballos,648,0,0
+1794427322677,275,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-10,text,true,,552,332,14,14,http://localhost:8000/api/v1/caballos/231%20,275,0,0
+1794427322492,460,POST /caballos (registro),201,Created,Usuarios concurrentes 1-7,text,true,,358,557,14,14,http://localhost:8000/api/v1/caballos,460,0,0
+1794427322497,455,POST /caballos (registro),201,Created,Usuarios concurrentes 1-13,text,true,,359,558,14,14,http://localhost:8000/api/v1/caballos,455,0,0
+1794427322667,460,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-5,text,true,,241,555,14,14,http://localhost:8000/api/v1/caballos/233%20,460,0,0
+1794427322706,430,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-6,text,true,,551,332,14,14,http://localhost:8000/api/v1/caballos/232%20,430,0,0
+1794427322720,549,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-11,text,true,,241,556,14,14,http://localhost:8000/api/v1/caballos/234%20,549,0,0
+1794427322719,553,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-12,text,true,,241,556,14,14,http://localhost:8000/api/v1/caballos/235%20,553,0,0
+1794427322706,589,GET /publicaciones ,200,OK,Usuarios concurrentes 1-14,text,true,,106504,323,15,15,http://localhost:8000/publicaciones,581,0,0
+1794427322330,1016,POST /auth/login,200,OK,Usuarios concurrentes 1-15,text,true,,397,238,15,15,http://localhost:8000/auth/login,1016,0,2
+1794427323128,269,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-5,text,true,,551,332,15,15,http://localhost:8000/api/v1/caballos/233%20,269,0,0
+1794427322410,989,POST /auth/login,200,OK,Usuarios concurrentes 1-9,text,true,,397,238,15,15,http://localhost:8000/auth/login,989,0,0
+1794427322953,651,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-7,text,true,,241,555,15,15,http://localhost:8000/api/v1/caballos/237%20,651,0,0
+1794427322953,669,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-13,text,true,,241,556,15,15,http://localhost:8000/api/v1/caballos/236%20,669,0,0
+1794427322492,1136,POST /auth/login,200,OK,Usuarios concurrentes 1-3,text,true,,397,238,15,15,http://localhost:8000/auth/login,1135,0,0
+1794427323272,403,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-12,text,true,,552,332,15,15,http://localhost:8000/api/v1/caballos/235%20,403,0,0
+1794427323270,586,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-11,text,true,,552,332,16,16,http://localhost:8000/api/v1/caballos/234%20,586,0,0
+1794427322559,1363,POST /auth/login,200,OK,Usuarios concurrentes 1-8,text,true,,397,238,16,16,http://localhost:8000/auth/login,1363,0,0
+1794427322486,1460,POST /auth/login,200,OK,Usuarios concurrentes 1-4,text,true,,397,238,16,16,http://localhost:8000/auth/login,1459,0,0
+1794427323347,603,GET /publicaciones ,200,OK,Usuarios concurrentes 1-15,text,true,,106549,323,16,16,http://localhost:8000/publicaciones,602,0,0
+1794427323141,1020,POST /auth/login,200,OK,Usuarios concurrentes 1-6,text,true,,397,238,16,16,http://localhost:8000/auth/login,1020,0,0
+1794427322789,1373,POST /auth/login,200,OK,Usuarios concurrentes 1-16,text,true,,397,238,16,16,http://localhost:8000/auth/login,1372,0,10
+1794427323296,869,POST /caballos (registro),201,Created,Usuarios concurrentes 1-14,text,true,,359,558,16,16,http://localhost:8000/api/v1/caballos,869,0,0
+1794427323400,814,GET /publicaciones ,200,OK,Usuarios concurrentes 1-9,text,true,,106549,323,16,16,http://localhost:8000/publicaciones,812,0,0
+1794427323605,699,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-7,text,true,,551,332,17,17,http://localhost:8000/api/v1/caballos/237%20,699,0,0
+1794427323277,1027,POST /auth/login,200,OK,Usuarios concurrentes 1-17,text,true,,397,238,17,17,http://localhost:8000/auth/login,1027,0,1
+1794427323629,693,GET /publicaciones ,200,OK,Usuarios concurrentes 1-3,text,true,,107112,323,17,17,http://localhost:8000/publicaciones,692,0,0
+1794427322953,1445,POST /auth/login,200,OK,Usuarios concurrentes 1-10,text,true,,397,238,17,17,http://localhost:8000/auth/login,1445,0,0
+1794427323924,633,GET /publicaciones ,200,OK,Usuarios concurrentes 1-8,text,true,,107112,323,17,17,http://localhost:8000/publicaciones,632,0,0
+1794427323676,1194,POST /auth/login,200,OK,Usuarios concurrentes 1-12,text,true,,397,238,18,18,http://localhost:8000/auth/login,1194,0,0
+1794427323947,941,GET /publicaciones ,200,OK,Usuarios concurrentes 1-4,text,true,,107112,323,18,18,http://localhost:8000/publicaciones,916,0,0
+1794427323623,1266,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-13,text,true,,552,332,18,18,http://localhost:8000/api/v1/caballos/236%20,1266,0,0
+1794427323399,1550,POST /auth/login,200,OK,Usuarios concurrentes 1-5,text,true,,397,238,18,18,http://localhost:8000/auth/login,1550,0,0
+1794427323951,1063,POST /caballos (registro),201,Created,Usuarios concurrentes 1-15,text,true,,359,558,18,18,http://localhost:8000/api/v1/caballos,1063,0,0
+1794427324163,873,GET /publicaciones ,200,OK,Usuarios concurrentes 1-16,text,true,,107112,323,18,18,http://localhost:8000/publicaciones,873,0,0
+1794427324164,1347,GET /publicaciones ,200,OK,Usuarios concurrentes 1-6,text,true,,107675,323,18,18,http://localhost:8000/publicaciones,1346,0,0
+1794427324215,1297,POST /caballos (registro),201,Created,Usuarios concurrentes 1-9,text,true,,358,557,18,18,http://localhost:8000/api/v1/caballos,1296,0,0
+1794427324166,1369,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-14,text,true,,241,556,18,18,http://localhost:8000/api/v1/caballos/238%20,1369,0,0
+1794427324399,1137,GET /publicaciones ,200,OK,Usuarios concurrentes 1-10,text,true,,107675,323,18,18,http://localhost:8000/publicaciones,1114,0,0
+1794427324305,1244,GET /publicaciones ,200,OK,Usuarios concurrentes 1-17,text,true,,107675,323,18,18,http://localhost:8000/publicaciones,1230,0,0
+1794427323775,1775,POST /auth/login,200,OK,Usuarios concurrentes 1-18,text,true,,397,238,18,18,http://localhost:8000/auth/login,1775,0,2
+1794427323858,1694,POST /auth/login,200,OK,Usuarios concurrentes 1-11,text,true,,397,238,18,18,http://localhost:8000/auth/login,1694,0,0
+1794427324272,1283,POST /auth/login,200,OK,Usuarios concurrentes 1-19,text,true,,397,238,18,18,http://localhost:8000/auth/login,1282,0,6
+1794427324305,1251,POST /auth/login,200,OK,Usuarios concurrentes 1-7,text,true,,397,238,18,18,http://localhost:8000/auth/login,1251,0,0
+1794427324324,1232,POST /caballos (registro),201,Created,Usuarios concurrentes 1-3,text,true,,358,557,18,18,http://localhost:8000/api/v1/caballos,1232,0,0
+1794427324872,1680,GET /publicaciones ,200,OK,Usuarios concurrentes 1-12,text,true,,108806,323,18,18,http://localhost:8000/publicaciones,1677,0,0
+1794427325016,1536,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-15,text,true,,241,556,18,18,http://localhost:8000/api/v1/caballos/239%20,1536,0,0
+1794427324950,1604,GET /publicaciones ,200,OK,Usuarios concurrentes 1-5,text,true,,108806,323,18,18,http://localhost:8000/publicaciones,1603,0,0
+1794427324558,2046,POST /caballos (registro),201,Created,Usuarios concurrentes 1-8,text,true,,358,557,18,18,http://localhost:8000/api/v1/caballos,2046,0,0
+1794427325555,1114,GET /publicaciones ,200,OK,Usuarios concurrentes 1-7,text,true,,109376,323,18,18,http://localhost:8000/publicaciones,1113,0,0
+1794427325552,1120,GET /publicaciones ,200,OK,Usuarios concurrentes 1-11,text,true,,109376,323,18,18,http://localhost:8000/publicaciones,1120,0,0
+1794427325553,1179,GET /publicaciones ,200,OK,Usuarios concurrentes 1-19,text,true,,109376,323,18,18,http://localhost:8000/publicaciones,1178,0,0
+1794427324891,1843,POST /auth/login,200,OK,Usuarios concurrentes 1-13,text,true,,397,238,18,18,http://localhost:8000/auth/login,1843,0,0
+1794427326550,182,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-15,text,true,,552,332,18,18,http://localhost:8000/api/v1/caballos/239%20,182,0,0
+1794427325537,1196,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-14,text,true,,552,332,18,18,http://localhost:8000/api/v1/caballos/238%20,1196,0,0
+1794427325555,1177,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-3,text,true,,241,555,18,18,http://localhost:8000/api/v1/caballos/241%20,1177,0,0
+1794427324889,1846,POST /caballos (registro),201,Created,Usuarios concurrentes 1-4,text,true,,358,557,18,18,http://localhost:8000/api/v1/caballos,1846,0,0
+1794427325037,1698,POST /caballos (registro),201,Created,Usuarios concurrentes 1-16,text,true,,359,558,18,18,http://localhost:8000/api/v1/caballos,1698,0,0
+1794427324793,1956,POST /auth/login,200,OK,Usuarios concurrentes 1-20,text,true,,397,238,18,18,http://localhost:8000/auth/login,1956,0,23
+1794427325549,1204,GET /publicaciones ,200,OK,Usuarios concurrentes 1-18,text,true,,109939,323,18,18,http://localhost:8000/publicaciones,1202,0,0
+1794427325512,1241,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-9,text,true,,241,555,18,18,http://localhost:8000/api/v1/caballos/240%20,1241,0,0
+1794427325512,1274,POST /caballos (registro),201,Created,Usuarios concurrentes 1-6,text,true,,358,557,18,18,http://localhost:8000/api/v1/caballos,1274,0,0
+1794427325534,1282,POST /caballos (registro),201,Created,Usuarios concurrentes 1-10,text,true,,359,558,18,18,http://localhost:8000/api/v1/caballos,1282,0,0
+1794427326550,368,POST /caballos (registro),201,Created,Usuarios concurrentes 1-12,text,true,,359,558,18,18,http://localhost:8000/api/v1/caballos,368,0,0
+1794427325548,1418,POST /caballos (registro),201,Created,Usuarios concurrentes 1-17,text,true,,359,558,18,18,http://localhost:8000/api/v1/caballos,1417,0,0
+1794427326604,446,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-8,text,true,,241,555,18,18,http://localhost:8000/api/v1/caballos/242%20,445,0,0
+1794427326552,672,POST /caballos (registro),201,Created,Usuarios concurrentes 1-5,text,true,,358,557,18,18,http://localhost:8000/api/v1/caballos,672,0,0
+1794427326754,568,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-9,text,true,,551,332,18,18,http://localhost:8000/api/v1/caballos/240%20,568,0,0
+1794427326670,931,POST /caballos (registro),201,Created,Usuarios concurrentes 1-7,text,true,,358,557,18,18,http://localhost:8000/api/v1/caballos,931,0,0
+1794427326673,1078,POST /caballos (registro),201,Created,Usuarios concurrentes 1-11,text,true,,359,558,18,18,http://localhost:8000/api/v1/caballos,1078,0,0
+1794427326754,1078,POST /caballos (registro),201,Created,Usuarios concurrentes 1-18,text,true,,359,558,18,18,http://localhost:8000/api/v1/caballos,1078,0,0
+1794427326734,1143,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-3,text,true,,551,332,18,18,http://localhost:8000/api/v1/caballos/241%20,1143,0,0
+1794427326734,1144,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-16,text,true,,241,556,18,18,http://localhost:8000/api/v1/caballos/243%20,1144,0,0
+1794427326733,1147,GET /publicaciones ,200,OK,Usuarios concurrentes 1-13,text,true,,113338,323,17,17,http://localhost:8000/publicaciones,1147,0,0
+1794427326748,1144,GET /publicaciones ,200,OK,Usuarios concurrentes 1-20,text,true,,114471,323,17,17,http://localhost:8000/publicaciones,1132,0,0
+1794427327050,842,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-8,text,true,,551,332,17,17,http://localhost:8000/api/v1/caballos/242%20,841,0,0
+1794427326734,1161,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-4,text,true,,241,555,17,17,http://localhost:8000/api/v1/caballos/244%20,1161,0,0
+1794427326733,1162,POST /caballos (registro),201,Created,Usuarios concurrentes 1-19,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,1162,0,0
+1794427326788,1108,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-6,text,true,,241,555,17,17,http://localhost:8000/api/v1/caballos/245%20,1107,0,0
+1794427326817,1100,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-10,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/246%20,1099,0,0
+1794427326919,1044,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-12,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/248%20,1043,0,0
+1794427326967,1006,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-17,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/247%20,1006,0,0
+1794427326734,1239,POST /auth/login,200,OK,Usuarios concurrentes 1-14,text,true,,397,238,17,17,http://localhost:8000/auth/login,1239,0,0
+1794427327225,760,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-5,text,true,,241,555,17,17,http://localhost:8000/api/v1/caballos/249%20,760,0,0
+1794427327603,419,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-7,text,true,,241,555,17,17,http://localhost:8000/api/v1/caballos/251%20,419,0,0
+1794427327879,280,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-16,text,true,,552,332,17,17,http://localhost:8000/api/v1/caballos/243%20,280,0,0
+1794427327752,419,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-11,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/250%20,419,0,0
+1794427326734,1442,POST /auth/login,200,OK,Usuarios concurrentes 1-15,text,true,,397,238,17,17,http://localhost:8000/auth/login,1442,0,0
+1794427327974,203,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-17,text,true,,552,332,17,17,http://localhost:8000/api/v1/caballos/247%20,203,0,0
+1794427327323,856,POST /auth/login,200,OK,Usuarios concurrentes 1-9,text,true,,397,238,17,17,http://localhost:8000/auth/login,856,0,0
+1794427327963,282,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-12,text,true,,552,332,17,17,http://localhost:8000/api/v1/caballos/248%20,282,0,0
+1794427327896,354,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-4,text,true,,551,332,17,17,http://localhost:8000/api/v1/caballos/244%20,354,0,0
+1794427327898,352,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-6,text,true,,551,332,17,17,http://localhost:8000/api/v1/caballos/245%20,352,0,0
+1794427327985,266,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-5,text,true,,551,332,17,17,http://localhost:8000/api/v1/caballos/249%20,266,0,0
+1794427327917,334,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-10,text,true,,552,332,17,17,http://localhost:8000/api/v1/caballos/246%20,334,0,0
+1794427327833,443,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-18,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/252%20,443,0,0
+1794427327974,314,GET /publicaciones ,200,OK,Usuarios concurrentes 1-14,text,true,,115678,323,17,17,http://localhost:8000/publicaciones,313,0,0
+1794427327896,444,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-19,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/253%20,444,0,0
+1794427328023,317,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-7,text,true,,551,332,17,17,http://localhost:8000/api/v1/caballos/251%20,317,0,0
+1794427328172,254,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-11,text,true,,552,332,17,17,http://localhost:8000/api/v1/caballos/250%20,254,0,0
+1794427327892,534,POST /caballos (registro),201,Created,Usuarios concurrentes 1-20,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,534,0,0
+1794427327881,664,POST /caballos (registro),201,Created,Usuarios concurrentes 1-13,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,664,0,0
+1794427328277,485,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-18,text,true,,552,332,17,17,http://localhost:8000/api/v1/caballos/252%20,485,0,0
+1794427327892,975,POST /auth/login,200,OK,Usuarios concurrentes 1-8,text,true,,397,238,17,17,http://localhost:8000/auth/login,975,0,0
+1794427328180,871,GET /publicaciones ,200,OK,Usuarios concurrentes 1-9,text,true,,116814,323,17,17,http://localhost:8000/publicaciones,869,0,0
+1794427328177,1023,GET /publicaciones ,200,OK,Usuarios concurrentes 1-15,text,true,,116813,323,17,17,http://localhost:8000/publicaciones,1022,0,0
+1794427328341,859,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-19,text,true,,552,332,17,17,http://localhost:8000/api/v1/caballos/253%20,859,0,0
+1794427328427,906,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-20,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/255%20,906,0,0
+1794427328289,1044,POST /caballos (registro),201,Created,Usuarios concurrentes 1-14,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,1044,0,0
+1794427328868,468,GET /publicaciones ,200,OK,Usuarios concurrentes 1-8,text,true,,116814,323,17,17,http://localhost:8000/publicaciones,467,0,0
+1794427328547,820,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-13,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/254%20,820,0,0
+1794427329052,382,POST /caballos (registro),201,Created,Usuarios concurrentes 1-9,text,true,,358,557,17,17,http://localhost:8000/api/v1/caballos,382,0,0
+1794427329334,121,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-20,text,true,,552,332,17,17,http://localhost:8000/api/v1/caballos/255%20,121,0,0
+1794427329368,110,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-13,text,true,,552,332,17,17,http://localhost:8000/api/v1/caballos/254%20,110,0,0
+1794427329200,348,POST /caballos (registro),201,Created,Usuarios concurrentes 1-15,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,348,0,0
+1794427329334,253,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-14,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/256%20,253,0,0
+1794427328178,1409,POST /auth/login,200,OK,Usuarios concurrentes 1-17,text,true,,397,238,17,17,http://localhost:8000/auth/login,1409,0,0
+1794427328251,1336,POST /auth/login,200,OK,Usuarios concurrentes 1-4,text,true,,397,238,17,17,http://localhost:8000/auth/login,1336,0,0
+1794427329337,253,POST /caballos (registro),201,Created,Usuarios concurrentes 1-8,text,true,,358,557,17,17,http://localhost:8000/api/v1/caballos,253,0,0
+1794427329435,421,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-9,text,true,,241,555,17,17,http://localhost:8000/api/v1/caballos/257%20,421,0,0
+1794427329592,404,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-14,text,true,,552,332,17,17,http://localhost:8000/api/v1/caballos/256%20,404,0,0
+1794427329549,476,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-15,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/258%20,476,0,0
+1794427329591,591,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-8,text,true,,241,555,17,17,http://localhost:8000/api/v1/caballos/259%20,591,0,0
+1794427328162,2020,POST /auth/login,200,OK,Usuarios concurrentes 1-16,text,true,,397,238,17,17,http://localhost:8000/auth/login,2020,0,0
+1794427329588,661,GET /publicaciones ,200,OK,Usuarios concurrentes 1-4,text,true,,119098,323,17,17,http://localhost:8000/publicaciones,650,0,0
+1794427328251,2120,POST /auth/login,200,OK,Usuarios concurrentes 1-6,text,true,,397,238,17,17,http://localhost:8000/auth/login,2120,0,0
+1794427329865,531,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-9,text,true,,551,332,17,17,http://localhost:8000/api/v1/caballos/257%20,530,0,0
+1794427328252,2144,POST /auth/login,200,OK,Usuarios concurrentes 1-5,text,true,,397,238,17,17,http://localhost:8000/auth/login,2144,0,0
+1794427330183,217,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-8,text,true,,551,332,17,17,http://localhost:8000/api/v1/caballos/259%20,217,0,0
+1794427328341,2059,POST /auth/login,200,OK,Usuarios concurrentes 1-7,text,true,,397,238,17,17,http://localhost:8000/auth/login,2059,0,0
+1794427328246,2154,POST /auth/login,200,OK,Usuarios concurrentes 1-12,text,true,,397,238,17,17,http://localhost:8000/auth/login,2154,0,0
+1794427330026,375,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-15,text,true,,552,332,17,17,http://localhost:8000/api/v1/caballos/258%20,375,0,0
+1794427330183,255,GET /publicaciones ,200,OK,Usuarios concurrentes 1-16,text,true,,119116,323,17,17,http://localhost:8000/publicaciones,254,0,0
+1794427328427,2115,POST /auth/login,200,OK,Usuarios concurrentes 1-11,text,true,,397,238,17,17,http://localhost:8000/auth/login,2115,0,0
+1794427329588,956,GET /publicaciones ,200,OK,Usuarios concurrentes 1-17,text,true,,119107,323,17,17,http://localhost:8000/publicaciones,955,0,0
+1794427328763,2387,POST /auth/login,200,OK,Usuarios concurrentes 1-18,text,true,,397,238,17,17,http://localhost:8000/auth/login,2387,0,0
+1794427328252,2961,POST /auth/login,200,OK,Usuarios concurrentes 1-10,text,true,,397,238,17,17,http://localhost:8000/auth/login,2961,0,0
+1794427329480,1733,POST /auth/login,200,OK,Usuarios concurrentes 1-13,text,true,,397,238,17,17,http://localhost:8000/auth/login,1733,0,0
+1794427329456,1757,POST /auth/login,200,OK,Usuarios concurrentes 1-20,text,true,,397,238,17,17,http://localhost:8000/auth/login,1757,0,0
+1794427330373,892,GET /publicaciones ,200,OK,Usuarios concurrentes 1-6,text,true,,119116,323,17,17,http://localhost:8000/publicaciones,892,0,0
+1794427330402,973,GET /publicaciones ,200,OK,Usuarios concurrentes 1-7,text,true,,119116,323,17,17,http://localhost:8000/publicaciones,948,0,0
+1794427330399,982,GET /publicaciones ,200,OK,Usuarios concurrentes 1-5,text,true,,119116,323,17,17,http://localhost:8000/publicaciones,978,0,0
+1794427330402,994,GET /publicaciones ,200,OK,Usuarios concurrentes 1-12,text,true,,119116,323,17,17,http://localhost:8000/publicaciones,979,0,0
+1794427329201,2248,POST /auth/login,200,OK,Usuarios concurrentes 1-19,text,true,,397,238,17,17,http://localhost:8000/auth/login,2247,0,0
+1794427330439,1369,POST /caballos (registro),201,Created,Usuarios concurrentes 1-16,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,1368,0,0
+1794427331215,767,GET /publicaciones ,200,OK,Usuarios concurrentes 1-13,text,true,,120240,323,17,17,http://localhost:8000/publicaciones,765,0,0
+1794427331152,833,GET /publicaciones ,200,OK,Usuarios concurrentes 1-18,text,true,,120240,323,17,17,http://localhost:8000/publicaciones,830,0,0
+1794427330398,1587,POST /auth/login,200,OK,Usuarios concurrentes 1-9,text,true,,397,238,17,17,http://localhost:8000/auth/login,1587,0,0
+1794427330403,1582,POST /auth/login,200,OK,Usuarios concurrentes 1-8,text,true,,397,238,17,17,http://localhost:8000/auth/login,1582,0,0
+1794427331215,773,GET /publicaciones ,200,OK,Usuarios concurrentes 1-10,text,true,,120240,323,17,17,http://localhost:8000/publicaciones,772,0,0
+1794427330403,1585,POST /auth/login,200,OK,Usuarios concurrentes 1-15,text,true,,397,238,17,17,http://localhost:8000/auth/login,1585,0,0
+1794427329998,2042,POST /auth/login,200,OK,Usuarios concurrentes 1-14,text,true,,397,238,17,17,http://localhost:8000/auth/login,2042,0,0
+1794427331215,827,GET /publicaciones ,200,OK,Usuarios concurrentes 1-20,text,true,,120240,323,17,17,http://localhost:8000/publicaciones,825,0,0
+1794427330250,1791,POST /caballos (registro),201,Created,Usuarios concurrentes 1-4,text,true,,358,557,17,17,http://localhost:8000/api/v1/caballos,1791,0,0
+1794427330544,1517,GET /publicaciones ,200,OK,Usuarios concurrentes 1-11,text,true,,120240,323,17,17,http://localhost:8000/publicaciones,1516,0,0
+1794427331376,837,POST /caballos (registro),201,Created,Usuarios concurrentes 1-7,text,true,,358,557,17,17,http://localhost:8000/api/v1/caballos,837,0,0
+1794427331267,947,POST /caballos (registro),201,Created,Usuarios concurrentes 1-6,text,true,,358,557,17,17,http://localhost:8000/api/v1/caballos,947,0,0
+1794427331809,407,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-16,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/261%20,407,0,0
+1794427331451,786,GET /publicaciones ,200,OK,Usuarios concurrentes 1-19,text,true,,120240,323,17,17,http://localhost:8000/publicaciones,771,0,0
+1794427330545,2173,POST /caballos (registro),201,Created,Usuarios concurrentes 1-17,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,2173,0,0
+1794427331383,1335,POST /caballos (registro),201,Created,Usuarios concurrentes 1-5,text,true,,358,557,17,17,http://localhost:8000/api/v1/caballos,1335,0,0
+1794427331397,1482,POST /caballos (registro),201,Created,Usuarios concurrentes 1-12,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,1482,0,0
+1794427331986,1178,GET /publicaciones ,200,OK,Usuarios concurrentes 1-8,text,true,,123058,323,17,17,http://localhost:8000/publicaciones,1131,0,0
+1794427331989,1282,GET /publicaciones ,200,OK,Usuarios concurrentes 1-15,text,true,,123058,323,17,17,http://localhost:8000/publicaciones,1269,0,0
+1794427331989,1283,POST /caballos (registro),201,Created,Usuarios concurrentes 1-10,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,1283,0,0
+1794427332042,1230,POST /caballos (registro),201,Created,Usuarios concurrentes 1-20,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,1230,0,0
+1794427331985,1290,GET /publicaciones ,200,OK,Usuarios concurrentes 1-9,text,true,,123058,323,17,17,http://localhost:8000/publicaciones,1289,0,0
+1794427332042,1277,GET /publicaciones ,200,OK,Usuarios concurrentes 1-14,text,true,,123058,323,17,17,http://localhost:8000/publicaciones,1268,0,0
+1794427331985,1335,POST /caballos (registro),201,Created,Usuarios concurrentes 1-18,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,1335,0,0
+1794427332061,1323,POST /caballos (registro),201,Created,Usuarios concurrentes 1-11,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,1323,0,0
+1794427331983,1406,POST /caballos (registro),201,Created,Usuarios concurrentes 1-13,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,1406,0,0
+1794427332217,1172,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-16,text,true,,552,332,17,17,http://localhost:8000/api/v1/caballos/261%20,1172,0,0
+1794427332042,1372,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-4,text,true,,241,555,17,17,http://localhost:8000/api/v1/caballos/260%20,1372,0,0
+1794427332214,1208,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-7,text,true,,241,555,17,17,http://localhost:8000/api/v1/caballos/264%20,1208,0,0
+1794427332719,754,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-5,text,true,,241,555,17,17,http://localhost:8000/api/v1/caballos/265%20,754,0,0
+1794427332215,1299,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-6,text,true,,241,555,17,17,http://localhost:8000/api/v1/caballos/263%20,1299,0,0
+1794427332719,795,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-17,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/262%20,795,0,0
+1794427332880,654,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-12,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/266%20,654,0,0
+1794427332237,1386,POST /caballos (registro),201,Created,Usuarios concurrentes 1-19,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,1386,0,0
+1794427333273,389,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-20,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/267%20,389,0,0
+1794427333165,510,POST /caballos (registro),201,Created,Usuarios concurrentes 1-8,text,true,,358,557,17,17,http://localhost:8000/api/v1/caballos,510,0,0
+1794427333275,413,POST /caballos (registro),201,Created,Usuarios concurrentes 1-9,text,true,,358,557,17,17,http://localhost:8000/api/v1/caballos,413,0,0
+1794427333272,447,POST /caballos (registro),201,Created,Usuarios concurrentes 1-15,text,true,,359,558,17,17,http://localhost:8000/api/v1/caballos,447,0,0
+1794427333273,473,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-10,text,true,,241,556,17,17,http://localhost:8000/api/v1/caballos/270%20,473,0,0
+1794427333475,271,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-5,text,true,,551,332,17,17,http://localhost:8000/api/v1/caballos/265%20,271,0,0
+1794427333415,349,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-4,text,true,,551,332,16,16,http://localhost:8000/api/v1/caballos/260%20,349,0,0
+1794427333386,404,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-11,text,true,,241,556,15,15,http://localhost:8000/api/v1/caballos/271%20,404,0,0
+1794427333390,401,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-13,text,true,,241,556,15,15,http://localhost:8000/api/v1/caballos/269%20,401,0,0
+1794427333517,285,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-17,text,true,,552,332,15,15,http://localhost:8000/api/v1/caballos/262%20,285,0,0
+1794427333425,387,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-7,text,true,,551,332,15,15,http://localhost:8000/api/v1/caballos/264%20,387,0,0
+1794427333517,311,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-6,text,true,,551,332,15,15,http://localhost:8000/api/v1/caballos/263%20,311,0,0
+1794427333535,294,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-12,text,true,,552,332,15,15,http://localhost:8000/api/v1/caballos/266%20,294,0,0
+1794427333323,510,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-18,text,true,,241,556,15,15,http://localhost:8000/api/v1/caballos/268%20,510,0,0
+1794427333319,531,POST /caballos (registro),201,Created,Usuarios concurrentes 1-14,text,true,,359,558,15,15,http://localhost:8000/api/v1/caballos,531,0,0
+1794427333663,201,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-20,text,true,,552,332,15,15,http://localhost:8000/api/v1/caballos/267%20,201,0,0
+1794427333747,149,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-10,text,true,,552,332,15,15,http://localhost:8000/api/v1/caballos/270%20,149,0,0
+1794427333676,273,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-8,text,true,,241,555,15,15,http://localhost:8000/api/v1/caballos/273%20,273,0,0
+1794427333720,288,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-15,text,true,,241,556,15,15,http://localhost:8000/api/v1/caballos/274%20,288,0,0
+1794427333393,616,POST /auth/login,200,OK,Usuarios concurrentes 1-16,text,true,,397,238,15,15,http://localhost:8000/auth/login,616,0,0
+1794427333625,477,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-19,text,true,,241,556,15,15,http://localhost:8000/api/v1/caballos/272%20,477,0,0
+1794427333792,784,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-13,text,true,,552,332,15,15,http://localhost:8000/api/v1/caballos/269%20,784,0,0
+1794427333689,2038,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-9,text,true,,241,555,15,15,http://localhost:8000/api/v1/caballos/275%20,2038,0,0
+1794427333949,1779,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-8,text,true,,551,332,15,15,http://localhost:8000/api/v1/caballos/273%20,1779,0,0
+1794427333833,1896,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-18,text,true,,552,332,15,15,http://localhost:8000/api/v1/caballos/268%20,1896,0,0
+1794427333792,1961,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-11,text,true,,552,332,15,15,http://localhost:8000/api/v1/caballos/271%20,1961,0,0
+1794427334009,2036,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-15,text,true,,552,332,15,15,http://localhost:8000/api/v1/caballos/274%20,2036,0,0
+1794427334103,1968,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-19,text,true,,552,332,15,15,http://localhost:8000/api/v1/caballos/272%20,1968,0,0
+1794427334010,2136,GET /publicaciones ,200,OK,Usuarios concurrentes 1-16,text,true,,128819,323,15,15,http://localhost:8000/publicaciones,2061,0,0
+1794427335727,722,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-9,text,true,,551,332,15,15,http://localhost:8000/api/v1/caballos/275%20,722,0,0
+1794427333867,2583,POST /auth/login,200,OK,Usuarios concurrentes 1-20,text,true,,397,238,15,15,http://localhost:8000/auth/login,2583,0,0
+1794427333851,2600,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-14,text,true,,241,556,15,15,http://localhost:8000/api/v1/caballos/276%20,2600,0,0
+1794427333803,3019,POST /auth/login,200,OK,Usuarios concurrentes 1-17,text,true,,397,238,15,15,http://localhost:8000/auth/login,3019,0,0
+1794427333830,2992,POST /auth/login,200,OK,Usuarios concurrentes 1-6,text,true,,397,238,15,15,http://localhost:8000/auth/login,2992,0,0
+1794427333897,3070,POST /auth/login,200,OK,Usuarios concurrentes 1-10,text,true,,397,238,15,15,http://localhost:8000/auth/login,3070,0,0
+1794427336450,521,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-14,text,true,,552,332,15,15,http://localhost:8000/api/v1/caballos/276%20,521,0,0
+1794427334578,2394,POST /auth/login,200,OK,Usuarios concurrentes 1-13,text,true,,397,238,15,15,http://localhost:8000/auth/login,2394,0,0
+1794427333830,3154,POST /auth/login,200,OK,Usuarios concurrentes 1-12,text,true,,397,238,15,15,http://localhost:8000/auth/login,3154,0,0
+1794427336450,671,GET /publicaciones ,200,OK,Usuarios concurrentes 1-20,text,true,,128828,323,15,15,http://localhost:8000/publicaciones,669,0,0
+1794427335728,1401,POST /auth/login,200,OK,Usuarios concurrentes 1-8,text,true,,397,238,15,15,http://localhost:8000/auth/login,1401,0,0
+1794427336146,983,POST /caballos (registro),201,Created,Usuarios concurrentes 1-16,text,true,,359,558,15,15,http://localhost:8000/api/v1/caballos,983,0,0
+1794427335754,1376,POST /auth/login,200,OK,Usuarios concurrentes 1-11,text,true,,397,238,15,15,http://localhost:8000/auth/login,1376,0,0
+1794427333813,3319,POST /auth/login,200,OK,Usuarios concurrentes 1-7,text,true,,397,238,15,15,http://localhost:8000/auth/login,3319,0,0
+1794427335728,1406,POST /auth/login,200,OK,Usuarios concurrentes 1-18,text,true,,397,238,15,15,http://localhost:8000/auth/login,1406,0,0
+1794427336071,1128,POST /auth/login,200,OK,Usuarios concurrentes 1-19,text,true,,397,238,15,15,http://localhost:8000/auth/login,1128,0,0
+1794427336046,1307,POST /auth/login,200,OK,Usuarios concurrentes 1-15,text,true,,397,238,15,15,http://localhost:8000/auth/login,1307,0,0
+1794427336822,535,GET /publicaciones ,200,OK,Usuarios concurrentes 1-17,text,true,,129391,323,15,15,http://localhost:8000/publicaciones,534,0,0
+1794427336822,560,GET /publicaciones ,200,OK,Usuarios concurrentes 1-6,text,true,,129391,323,15,15,http://localhost:8000/publicaciones,549,0,0
+1794427336450,1335,POST /auth/login,200,OK,Usuarios concurrentes 1-9,text,true,,397,238,15,15,http://localhost:8000/auth/login,1335,0,0
+1794427337131,1644,GET /publicaciones ,200,OK,Usuarios concurrentes 1-11,text,true,,129391,323,15,15,http://localhost:8000/publicaciones,1639,0,0
+1794427337130,1645,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-16,text,true,,241,556,15,15,http://localhost:8000/api/v1/caballos/277%20,1645,0,0
+1794427336972,1812,GET /publicaciones ,200,OK,Usuarios concurrentes 1-13,text,true,,129391,323,15,15,http://localhost:8000/publicaciones,1803,0,0
+1794427337129,1657,GET /publicaciones ,200,OK,Usuarios concurrentes 1-8,text,true,,129391,323,15,15,http://localhost:8000/publicaciones,1653,0,0
+1794427336984,1814,GET /publicaciones ,200,OK,Usuarios concurrentes 1-12,text,true,,129400,323,15,15,http://localhost:8000/publicaciones,1802,0,0
+1794427337135,1666,GET /publicaciones ,200,OK,Usuarios concurrentes 1-18,text,true,,129400,323,15,15,http://localhost:8000/publicaciones,1663,0,0
+1794427336972,1829,POST /auth/login,200,OK,Usuarios concurrentes 1-14,text,true,,397,238,15,15,http://localhost:8000/auth/login,1829,0,0
+1794427337199,1603,GET /publicaciones ,200,OK,Usuarios concurrentes 1-19,text,true,,129391,323,15,15,http://localhost:8000/publicaciones,1602,0,0
+1794427337122,1680,POST /caballos (registro),201,Created,Usuarios concurrentes 1-20,text,true,,359,558,15,15,http://localhost:8000/api/v1/caballos,1680,0,0
+1794427336967,1867,GET /publicaciones ,200,OK,Usuarios concurrentes 1-10,text,true,,129391,323,15,15,http://localhost:8000/publicaciones,1835,0,0
+1794427337132,1715,GET /publicaciones ,200,OK,Usuarios concurrentes 1-7,text,true,,129391,323,15,15,http://localhost:8000/publicaciones,1670,0,0
+1794427337789,1066,GET /publicaciones ,200,OK,Usuarios concurrentes 1-9,text,true,,129963,323,15,15,http://localhost:8000/publicaciones,1063,0,0
+1794427337383,1567,POST /caballos (registro),201,Created,Usuarios concurrentes 1-6,text,true,,358,557,15,15,http://localhost:8000/api/v1/caballos,1567,0,0
+1794427337354,1599,GET /publicaciones ,200,OK,Usuarios concurrentes 1-15,text,true,,129963,323,15,15,http://localhost:8000/publicaciones,1597,0,0
+1794427337358,1799,POST /caballos (registro),201,Created,Usuarios concurrentes 1-17,text,true,,359,558,15,15,http://localhost:8000/api/v1/caballos,1799,0,0
+1794427338776,405,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-16,text,true,,552,332,15,15,http://localhost:8000/api/v1/caballos/277%20,405,0,0
+1794427338776,653,POST /caballos (registro),201,Created,Usuarios concurrentes 1-11,text,true,,359,558,15,15,http://localhost:8000/api/v1/caballos,653,0,0
+1794427338785,644,POST /caballos (registro),201,Created,Usuarios concurrentes 1-13,text,true,,359,558,15,15,http://localhost:8000/api/v1/caballos,644,0,0
+1794427338803,897,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-20,text,true,,241,556,15,15,http://localhost:8000/api/v1/caballos/278%20,897,0,0
+1794427338802,900,GET /publicaciones ,200,OK,Usuarios concurrentes 1-14,text,true,,131087,323,15,15,http://localhost:8000/publicaciones,897,0,0
+1794427338951,769,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-6,text,true,,241,555,15,15,http://localhost:8000/api/v1/caballos/279%20,769,0,0
+1794427338836,905,POST /caballos (registro),201,Created,Usuarios concurrentes 1-10,text,true,,359,558,15,15,http://localhost:8000/api/v1/caballos,905,0,0
+1794427338799,1052,POST /caballos (registro),201,Created,Usuarios concurrentes 1-12,text,true,,359,558,15,15,http://localhost:8000/api/v1/caballos,1052,0,0
+1794427338802,1049,POST /caballos (registro),201,Created,Usuarios concurrentes 1-18,text,true,,359,558,15,15,http://localhost:8000/api/v1/caballos,1049,0,0
+1794427338847,1004,POST /caballos (registro),201,Created,Usuarios concurrentes 1-7,text,true,,358,557,15,15,http://localhost:8000/api/v1/caballos,1004,0,0
+1794427338787,1128,POST /caballos (registro),201,Created,Usuarios concurrentes 1-8,text,true,,358,557,15,15,http://localhost:8000/api/v1/caballos,1128,0,0
+1794427339429,489,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-11,text,true,,241,556,15,15,http://localhost:8000/api/v1/caballos/282%20,489,0,0
+1794427338803,1115,POST /caballos (registro),201,Created,Usuarios concurrentes 1-19,text,true,,359,558,15,15,http://localhost:8000/api/v1/caballos,1115,0,0
+1794427338856,1062,POST /caballos (registro),201,Created,Usuarios concurrentes 1-9,text,true,,358,557,15,15,http://localhost:8000/api/v1/caballos,1062,0,0
+1794427338954,964,POST /caballos (registro),201,Created,Usuarios concurrentes 1-15,text,true,,359,558,15,15,http://localhost:8000/api/v1/caballos,964,0,0
+1794427339169,751,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-17,text,true,,241,556,15,15,http://localhost:8000/api/v1/caballos/280%20,751,0,0
+1794427339701,219,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-20,text,true,,552,332,15,15,http://localhost:8000/api/v1/caballos/278%20,219,0,0
+1794427339433,496,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-13,text,true,,241,556,15,15,http://localhost:8000/api/v1/caballos/281%20,496,0,0
+1794427339183,924,POST /auth/login,200,OK,Usuarios concurrentes 1-16,text,true,,397,238,15,15,http://localhost:8000/auth/login,924,0,0
+1794427339702,405,POST /caballos (registro),201,Created,Usuarios concurrentes 1-14,text,true,,359,558,15,15,http://localhost:8000/api/v1/caballos,405,0,0
+1794427339723,387,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-6,text,true,,551,332,15,15,http://localhost:8000/api/v1/caballos/279%20,387,0,0
+1794427339743,409,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-10,text,true,,241,556,14,14,http://localhost:8000/api/v1/caballos/283%20,409,0,0
+1794427339852,484,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-18,text,true,,241,556,14,14,http://localhost:8000/api/v1/caballos/289%20,484,0,0
+1794427339852,484,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-12,text,true,,241,556,14,14,http://localhost:8000/api/v1/caballos/287%20,484,0,0
+1794427339931,405,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-13,text,true,,552,332,14,14,http://localhost:8000/api/v1/caballos/281%20,405,0,0
+1794427339916,421,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-8,text,true,,241,555,14,14,http://localhost:8000/api/v1/caballos/284%20,421,0,0
+1794427339852,485,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-7,text,true,,241,555,14,14,http://localhost:8000/api/v1/caballos/286%20,485,0,0
+1794427339918,420,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-11,text,true,,552,332,14,14,http://localhost:8000/api/v1/caballos/282%20,420,0,0
+1794427339920,448,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-17,text,true,,552,332,14,14,http://localhost:8000/api/v1/caballos/280%20,448,0,0
+1794427339919,538,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-19,text,true,,241,556,14,14,http://localhost:8000/api/v1/caballos/285%20,538,0,0
+1794427340153,310,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-10,text,true,,552,332,14,14,http://localhost:8000/api/v1/caballos/283%20,310,0,0
+1794427339919,544,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-9,text,true,,241,555,14,14,http://localhost:8000/api/v1/caballos/290%20,544,0,0
+1794427340108,470,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-14,text,true,,241,556,14,14,http://localhost:8000/api/v1/caballos/291%20,470,0,0
+1794427340108,470,GET /publicaciones ,200,OK,Usuarios concurrentes 1-16,text,true,,137373,323,14,14,http://localhost:8000/publicaciones,470,0,0
+1794427339919,676,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-15,text,true,,241,556,14,14,http://localhost:8000/api/v1/caballos/288%20,676,0,0
+1794427339923,689,POST /auth/login,200,OK,Usuarios concurrentes 1-20,text,true,,397,238,14,14,http://localhost:8000/auth/login,689,0,0
+1794427340459,183,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-19,text,true,,552,332,14,14,http://localhost:8000/api/v1/caballos/285%20,183,0,0
+1794427340337,392,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-8,text,true,,551,332,14,14,http://localhost:8000/api/v1/caballos/284%20,392,0,0
+1794427340596,468,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-15,text,true,,552,332,13,13,http://localhost:8000/api/v1/caballos/288%20,468,0,0
+1794427340580,522,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-14,text,true,,552,332,13,13,http://localhost:8000/api/v1/caballos/291%20,522,0,0
+1794427340614,538,GET /publicaciones ,200,OK,Usuarios concurrentes 1-20,text,true,,137400,323,13,13,http://localhost:8000/publicaciones,536,0,0
+1794427340337,815,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-18,text,true,,552,332,13,13,http://localhost:8000/api/v1/caballos/289%20,815,0,0
+1794427340337,820,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-12,text,true,,552,332,13,13,http://localhost:8000/api/v1/caballos/287%20,820,0,0
+1794427340465,694,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-9,text,true,,551,332,13,13,http://localhost:8000/api/v1/caballos/290%20,694,0,0
+1794427340338,861,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-7,text,true,,551,332,12,12,http://localhost:8000/api/v1/caballos/286%20,861,0,0
+1794427340580,699,POST /caballos (registro),201,Created,Usuarios concurrentes 1-16,text,true,,359,558,11,11,http://localhost:8000/api/v1/caballos,699,0,0
+1794427340465,948,POST /auth/login,200,OK,Usuarios concurrentes 1-10,text,true,,397,238,11,11,http://localhost:8000/auth/login,948,0,0
+1794427341280,190,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-16,text,true,,241,556,11,11,http://localhost:8000/api/v1/caballos/292%20,190,0,0
+1794427341153,406,POST /caballos (registro),201,Created,Usuarios concurrentes 1-20,text,true,,359,558,11,11,http://localhost:8000/api/v1/caballos,406,0,0
+1794427341471,279,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-16,text,true,,552,332,11,11,http://localhost:8000/api/v1/caballos/292%20,279,0,0
+1794427341414,419,GET /publicaciones ,200,OK,Usuarios concurrentes 1-10,text,true,,138535,323,11,11,http://localhost:8000/publicaciones,418,0,0
+1794427340339,1511,POST /auth/login,200,OK,Usuarios concurrentes 1-11,text,true,,397,238,11,11,http://localhost:8000/auth/login,1511,0,0
+1794427341560,369,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-20,text,true,,241,556,11,11,http://localhost:8000/api/v1/caballos/293%20,369,0,0
+1794427340369,1565,POST /auth/login,200,OK,Usuarios concurrentes 1-17,text,true,,397,238,11,11,http://localhost:8000/auth/login,1565,0,0
+1794427340337,1677,POST /auth/login,200,OK,Usuarios concurrentes 1-13,text,true,,397,238,11,11,http://localhost:8000/auth/login,1677,0,0
+1794427340643,1392,POST /auth/login,200,OK,Usuarios concurrentes 1-19,text,true,,397,238,11,11,http://localhost:8000/auth/login,1392,0,0
+1794427341065,1043,POST /auth/login,200,OK,Usuarios concurrentes 1-15,text,true,,397,238,11,11,http://localhost:8000/auth/login,1042,0,0
+1794427341833,283,POST /caballos (registro),201,Created,Usuarios concurrentes 1-10,text,true,,359,558,11,11,http://localhost:8000/api/v1/caballos,283,0,0
+1794427341104,1145,POST /auth/login,200,OK,Usuarios concurrentes 1-14,text,true,,397,238,11,11,http://localhost:8000/auth/login,1145,0,0
+1794427341852,499,GET /publicaciones ,200,OK,Usuarios concurrentes 1-11,text,true,,138544,323,11,11,http://localhost:8000/publicaciones,497,0,0
+1794427341159,1228,POST /auth/login,200,OK,Usuarios concurrentes 1-12,text,true,,397,238,11,11,http://localhost:8000/auth/login,1227,0,0
+1794427341154,1233,POST /auth/login,200,OK,Usuarios concurrentes 1-18,text,true,,397,238,11,11,http://localhost:8000/auth/login,1232,0,0
+1794427341931,510,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-20,text,true,,552,332,11,11,http://localhost:8000/api/v1/caballos/293%20,510,0,0
+1794427341936,560,GET /publicaciones ,200,OK,Usuarios concurrentes 1-17,text,true,,139107,323,11,11,http://localhost:8000/publicaciones,559,0,0
+1794427342108,456,GET /publicaciones ,200,OK,Usuarios concurrentes 1-15,text,true,,139107,323,11,11,http://localhost:8000/publicaciones,450,0,0
+1794427342016,551,GET /publicaciones ,200,OK,Usuarios concurrentes 1-13,text,true,,139107,323,11,11,http://localhost:8000/publicaciones,540,0,0
+1794427342036,533,GET /publicaciones ,200,OK,Usuarios concurrentes 1-19,text,true,,139107,323,11,11,http://localhost:8000/publicaciones,519,0,0
+1794427341752,926,POST /auth/login,200,OK,Usuarios concurrentes 1-16,text,true,,397,238,11,11,http://localhost:8000/auth/login,926,0,0
+1794427342117,652,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-10,text,true,,241,556,11,11,http://localhost:8000/api/v1/caballos/294%20,652,0,0
+1794427342387,621,GET /publicaciones ,200,OK,Usuarios concurrentes 1-18,text,true,,139116,323,11,11,http://localhost:8000/publicaciones,614,0,0
+1794427342387,658,GET /publicaciones ,200,OK,Usuarios concurrentes 1-12,text,true,,139116,323,11,11,http://localhost:8000/publicaciones,657,0,0
+1794427342250,806,GET /publicaciones ,200,OK,Usuarios concurrentes 1-14,text,true,,139116,323,11,11,http://localhost:8000/publicaciones,796,0,0
+1794427342497,562,POST /caballos (registro),201,Created,Usuarios concurrentes 1-17,text,true,,359,558,11,11,http://localhost:8000/api/v1/caballos,562,0,0
+1794427342351,813,POST /caballos (registro),201,Created,Usuarios concurrentes 1-11,text,true,,359,558,11,11,http://localhost:8000/api/v1/caballos,813,0,0
+1794427342769,535,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-10,text,true,,552,332,11,11,http://localhost:8000/api/v1/caballos/294%20,535,0,0
+1794427342570,846,POST /caballos (registro),201,Created,Usuarios concurrentes 1-19,text,true,,359,558,10,10,http://localhost:8000/api/v1/caballos,846,0,0
+1794427342443,1128,POST /auth/login,200,OK,Usuarios concurrentes 1-20,text,true,,397,238,10,10,http://localhost:8000/auth/login,1128,0,0
+1794427342680,892,GET /publicaciones ,200,OK,Usuarios concurrentes 1-16,text,true,,140242,323,10,10,http://localhost:8000/publicaciones,889,0,0
+1794427343059,521,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-17,text,true,,241,556,10,10,http://localhost:8000/api/v1/caballos/295%20,521,0,0
+1794427342565,1018,POST /caballos (registro),201,Created,Usuarios concurrentes 1-15,text,true,,359,558,10,10,http://localhost:8000/api/v1/caballos,1018,0,0
+1794427342567,1019,POST /caballos (registro),201,Created,Usuarios concurrentes 1-13,text,true,,359,558,10,10,http://localhost:8000/api/v1/caballos,1019,0,0
+1794427343165,444,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-11,text,true,,241,556,10,10,http://localhost:8000/api/v1/caballos/296%20,444,0,0
+1794427343009,638,POST /caballos (registro),201,Created,Usuarios concurrentes 1-18,text,true,,359,558,10,10,http://localhost:8000/api/v1/caballos,638,0,0
+1794427343045,619,POST /caballos (registro),201,Created,Usuarios concurrentes 1-12,text,true,,359,558,10,10,http://localhost:8000/api/v1/caballos,618,0,0
+1794427343056,616,POST /caballos (registro),201,Created,Usuarios concurrentes 1-14,text,true,,359,558,10,10,http://localhost:8000/api/v1/caballos,616,0,0
+1794427343416,295,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-19,text,true,,241,556,10,10,http://localhost:8000/api/v1/caballos/297%20,295,0,0
+1794427343581,171,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-17,text,true,,552,332,10,10,http://localhost:8000/api/v1/caballos/295%20,171,0,0
+1794427343584,175,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-15,text,true,,241,556,10,10,http://localhost:8000/api/v1/caballos/298%20,175,0,0
+1794427343572,291,GET /publicaciones ,200,OK,Usuarios concurrentes 1-20,text,true,,143647,323,10,10,http://localhost:8000/publicaciones,290,0,0
+1794427343586,308,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-13,text,true,,241,556,10,10,http://localhost:8000/api/v1/caballos/299%20,308,0,0
+1794427343609,285,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-11,text,true,,552,332,10,10,http://localhost:8000/api/v1/caballos/296%20,285,0,0
+1794427343711,239,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-19,text,true,,552,332,9,9,http://localhost:8000/api/v1/caballos/297%20,239,0,0
+1794427343760,221,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-15,text,true,,552,332,9,9,http://localhost:8000/api/v1/caballos/298%20,221,0,0
+1794427343572,465,POST /caballos (registro),201,Created,Usuarios concurrentes 1-16,text,true,,359,558,8,8,http://localhost:8000/api/v1/caballos,465,0,0
+1794427343895,152,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-13,text,true,,552,332,8,8,http://localhost:8000/api/v1/caballos/299%20,152,0,0
+1794427343665,412,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-12,text,true,,241,556,7,7,http://localhost:8000/api/v1/caballos/301%20,412,0,0
+1794427343648,444,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-18,text,true,,241,556,7,7,http://localhost:8000/api/v1/caballos/300%20,444,0,0
+1794427343673,419,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-14,text,true,,241,556,7,7,http://localhost:8000/api/v1/caballos/302%20,419,0,0
+1794427343864,249,POST /caballos (registro),201,Created,Usuarios concurrentes 1-20,text,true,,359,558,7,7,http://localhost:8000/api/v1/caballos,249,0,0
+1794427344093,106,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-18,text,true,,552,332,7,7,http://localhost:8000/api/v1/caballos/300%20,106,0,0
+1794427344038,204,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-16,text,true,,241,556,7,7,http://localhost:8000/api/v1/caballos/303%20,204,0,0
+1794427344078,164,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-12,text,true,,552,332,7,7,http://localhost:8000/api/v1/caballos/301%20,164,0,0
+1794427343753,489,POST /auth/login,200,OK,Usuarios concurrentes 1-17,text,true,,397,238,7,7,http://localhost:8000/auth/login,489,0,0
+1794427344093,149,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-14,text,true,,552,332,7,7,http://localhost:8000/api/v1/caballos/302%20,149,0,0
+1794427344115,239,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-20,text,true,,241,556,5,5,http://localhost:8000/api/v1/caballos/304%20,239,0,0
+1794427344243,208,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-16,text,true,,552,332,5,5,http://localhost:8000/api/v1/caballos/303%20,208,0,0
+1794427343951,502,POST /auth/login,200,OK,Usuarios concurrentes 1-19,text,true,,398,238,4,4,http://localhost:8000/auth/login,502,0,0
+1794427344242,478,GET /publicaciones ,200,OK,Usuarios concurrentes 1-17,text,true,,144836,323,4,4,http://localhost:8000/publicaciones,412,0,0
+1794427344355,366,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-20,text,true,,552,332,4,4,http://localhost:8000/api/v1/caballos/304%20,366,0,0
+1794427344454,373,GET /publicaciones ,200,OK,Usuarios concurrentes 1-19,text,true,,144836,324,3,3,http://localhost:8000/publicaciones,342,0,0
+1794427344200,659,POST /auth/login,200,OK,Usuarios concurrentes 1-18,text,true,,398,238,3,3,http://localhost:8000/auth/login,659,0,0
+1794427344721,246,POST /caballos (registro),201,Created,Usuarios concurrentes 1-17,text,true,,359,558,3,3,http://localhost:8000/api/v1/caballos,246,0,0
+1794427344828,281,POST /caballos (registro),201,Created,Usuarios concurrentes 1-19,text,true,,360,559,3,3,http://localhost:8000/api/v1/caballos,281,0,0
+1794427344860,251,GET /publicaciones ,200,OK,Usuarios concurrentes 1-18,text,true,,145399,324,3,3,http://localhost:8000/publicaciones,249,0,0
+1794427344968,183,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-17,text,true,,241,556,3,3,http://localhost:8000/api/v1/caballos/305%20,183,0,0
+1794427345151,64,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-17,text,true,,552,332,3,3,http://localhost:8000/api/v1/caballos/305%20,64,0,0
+1794427345110,106,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-19,text,true,,241,557,3,3,http://localhost:8000/api/v1/caballos/306%20,106,0,0
+1794427345112,124,POST /caballos (registro),201,Created,Usuarios concurrentes 1-18,text,true,,360,559,2,2,http://localhost:8000/api/v1/caballos,124,0,0
+1794427345216,36,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-19,text,true,,552,333,2,2,http://localhost:8000/api/v1/caballos/306%20,36,0,0
+1794427345237,63,PUT /caballos/{id} (actualización),200,OK,Usuarios concurrentes 1-18,text,true,,241,557,1,1,http://localhost:8000/api/v1/caballos/307%20,63,0,0
+1794427345301,32,GET /caballos/{id} (consulta final) ,200,OK,Usuarios concurrentes 1-18,text,true,,552,333,1,1,http://localhost:8000/api/v1/caballos/307%20,32,0,0
