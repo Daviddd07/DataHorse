@@ -1,0 +1,58 @@
+# Override de PRODUCCIÓN (servidor AWS). Se suma a docker-compose.yml sin modificarlo:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+# Requiere Docker Compose 2.24+ (por "!reset") y en el .env de la raíz: DOMINIO (además de DB_ROOT_PASSWORD y DB_NAME).
+# Solo Caddy queda expuesto a internet (80/443); MySQL, backend, frontend y Grafana solo se ven dentro de Docker.
+
+# Una sola aplicación: todos los servicios aparecen agrupados como "datahorse" (docker ps / Docker Desktop)
+name: datahorse
+
+services:
+  db:
+    ports: !reset []          # MySQL sin puerto público
+
+  backend:
+    ports: !reset []          # la API solo se alcanza por Caddy (https://api.DOMINIO)
+    environment:
+      # Estas variables mandan sobre las del backend/.env
+      ENVIRONMENT: production                      # cookies secure + SameSite=None, oculta /docs
+      ALLOWED_ORIGINS: https://${DOMINIO}          # CORS: solo la app
+      GRAFANA_URL: https://grafana.${DOMINIO}      # botón de logs del panel admin
+      FORWARDED_ALLOW_IPS: "*"                     # confiar en la IP real que envía Caddy (rate limit por IP)
+      MALLOC_ARENA_MAX: "2"                        # contiene la RAM bajo carga (visto en las pruebas)
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        CONFIGURACION: despliegue                  # compila con environment.despliegue.ts (F1–F3)
+    ports: !reset []
+
+  grafana:
+    ports: !reset []
+    environment:
+      GF_SERVER_ROOT_URL: https://grafana.${DOMINIO}
+      GF_SECURITY_COOKIE_SECURE: "true"
+
+  # Proxy con HTTPS automático (Let's Encrypt). Configuración en ./Caddyfile (R2).
+  caddy:
+    image: caddy:2-alpine
+    container_name: datahorse-caddy
+    restart: always
+    depends_on:
+      - frontend
+      - backend
+      - grafana
+    environment:
+      DOMINIO: ${DOMINIO}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"         # HTTP/3
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data      # certificados: si se pierden, Let's Encrypt limita cuántos se pueden pedir
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

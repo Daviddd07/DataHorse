@@ -1,5 +1,6 @@
 # Conexión de Grafana a MySQL (se crea sola al arrancar el contenedor).
-# Usa el usuario de solo lectura de init-db/zz_grafana_lector.sql.
+# Usa el usuario de solo lectura de init-db/03_grafana_lector.sh.
+# La contraseña viene de GRAFANA_DB_PASSWORD (.env de la raíz); nunca se escribe aquí.
 apiVersion: 1
 
 datasources:
@@ -16,6 +17,6 @@ datasources:
       connMaxLifetime: 14400
       timezone: UTC
     secureJsonData:
-      password: <GRAFANA_DB_PASSWORD>
+      password: ${GRAFANA_DB_PASSWORD}
     isDefault: true
     editable: false

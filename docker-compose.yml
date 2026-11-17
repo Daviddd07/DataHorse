@@ -7,13 +7,18 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_DATABASE: ${DB_NAME}
+      # Contraseña del usuario de solo lectura de Grafana (la usa init-db/03_grafana_lector.sh)
+      GRAFANA_DB_PASSWORD: ${GRAFANA_DB_PASSWORD}
     ports:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
       - ./init-db:/docker-entrypoint-initdb.d
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      # 127.0.0.1 (TCP) y no localhost (socket): durante el primer arranque MySQL corre los scripts de
+      # init-db en un servidor temporal SIN red; por socket respondía "listo" antes de tiempo y el backend
+      # recibía "Connection refused" (no se creaba el admin inicial).
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -55,6 +60,8 @@ services:
         condition: service_healthy
     environment:
       DB_NAME: ${DB_NAME}
+      # La lee grafana/provisioning/datasources/mysql.yml (conexión de solo lectura a MySQL)
+      GRAFANA_DB_PASSWORD: ${GRAFANA_DB_PASSWORD}
       GF_USERS_ALLOW_SIGN_UP: "false"
       GF_AUTH_ANONYMOUS_ENABLED: "false"
       GF_ANALYTICS_REPORTING_ENABLED: "false"
