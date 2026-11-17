@@ -12,7 +12,12 @@ services:
 
   backend:
     ports: !reset []          # la API solo se alcanza por Caddy (https://api.DOMINIO)
+    volumes: !reset []        # fotos y documentos van al bucket S3, no al disco de la VM
     environment:
+      # Fotos y documentos en S3 (bucket privado). Credenciales: rol de la VM (sin claves en el .env)
+      ALMACENAMIENTO: s3
+      S3_BUCKET_ARCHIVOS: ${S3_BUCKET_ARCHIVOS:?Falta S3_BUCKET_ARCHIVOS en el .env de la raíz}
+      AWS_REGION: us-east-2
       # Estas variables mandan sobre las del backend/.env
       ENVIRONMENT: production                      # cookies secure + SameSite=None, oculta /docs
       ALLOWED_ORIGINS: https://${DOMINIO}          # CORS: solo la app
